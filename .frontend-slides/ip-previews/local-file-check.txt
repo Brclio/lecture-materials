@@ -1,0 +1,9 @@
+### Result
+{"page":"file:","current":1,"images":true,"fontStatus":"loaded","remoteRequests":[]}
+### Ran Playwright code
+```js
+await (async (page)=>{const requested=[];await page.route('https://**/*',r=>{requested.push(r.request().url());r.abort()});await page.setViewportSize({width:1600,height:900});await page.goto('file:///Users/huangjiabao/Desktop/%E8%AE%B2%E5%BA%A7%E6%9D%90%E6%96%99/Bornforthis-IP%E8%AE%B2%E5%BA%A7%E6%A0%B7%E7%A8%BF.html');await page.evaluate(()=>document.fonts.ready);await page.keyboard.press('ArrowRight');return await page.evaluate(requested=>({page:location.protocol,current:window.presentation.index,images:[...document.querySelectorAll('img')].every(x=>x.complete&&x.naturalWidth>0),fontStatus:document.fonts.status,remoteRequests:requested}),requested)})(page);
+```
+### Page
+- Page URL: file:///Users/huangjiabao/Desktop/%E8%AE%B2%E5%BA%A7%E6%9D%90%E6%96%99/Bornforthis-IP%E8%AE%B2%E5%BA%A7%E6%A0%B7%E7%A8%BF.html#2
+- Page Title: AI 浪潮下｜Brclio 场景讲座样稿

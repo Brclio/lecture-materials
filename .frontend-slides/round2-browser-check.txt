@@ -1,0 +1,28 @@
+### Result
+[{"name":"d","stage":[1280,720],"texts":[{"text":"大学讲座\nLEARN / BUILD / SHARE","inside":true},{"text":"我们应该如何\n应对与学习？","inside":true},{"text":"从想法，到作品。","inside":true},{"text":"不止提出问题，\n更是解决问题。","inside":true},{"text":"把学习，变成行动。","inside":true}],"fontsLoaded":["Noto Sans SC","Noto Sans SC","Space Grotesk","JetBrains Mono"]},{"name":"e","stage":[1280,720],"texts":[{"text":"大学讲座\nAI悦创 / Bornforthis","inside":true},{"text":"我们应该如何\n应对与学习？","inside":true},{"text":"不止提出问题，更是解决问题。","inside":true},{"text":"从想法\n到作品","inside":true},{"text":"原则 · 方法 · 实践\n01","inside":true}],"fontsLoaded":["Noto Sans SC","Noto Sans SC","Big Shoulders Display","Albert Sans"]},{"name":"f","stage":[1280,720],"texts":[{"text":"大学讲座\nAI悦创 / Bornforthis","inside":true},{"text":"我们应该如何\n应对与学习？","inside":true},{"text":"不止提出问题，更是解决问题。","inside":true},{"text":"LEARN / BUILD / SHARE\n原则 · 方法 · 实践","inside":true}],"fontsLoaded":["Noto Sans SC","Noto Sans SC","Archivo"]},{"name":"g","stage":[1280,720],"texts":[{"text":"大学讲座\nAI悦创 / Bornforthis","inside":true},{"text":"AI 浪潮下","inside":true},{"text":"我们应该如何\n应对与学习？","inside":true},{"text":"不止提出问题，更是解决问题。","inside":true}],"fontsLoaded":["Noto Sans SC","Noto Sans SC","Barlow"]},{"name":"h","stage":[1280,720],"texts":[{"text":"大学讲座\nAI悦创 / Bornforthis","inside":true},{"text":"AI 浪潮下","inside":true},{"text":"我们应该如何\n应对与学习？","inside":true},{"text":"不止提出问题，更是解决问题。","inside":true},{"text":"从想法，到作品。\nLEARN / BUILD / SHARE","inside":true}],"fontsLoaded":["Noto Sans SC","Noto Sans SC"]},{"name":"i","stage":[1280,720],"texts":[{"text":"Bornforthis\nAI悦创 · 大学讲座","inside":true},{"text":"AI 浪潮下","inside":true},{"text":"我们应该如何\n应对与学习？","inside":true},{"text":"不止提出问题，更是解决问题。","inside":true},{"text":"原则 · 方法 · 实践\n从想法，到作品。","inside":true}],"fontsLoaded":["Noto Sans SC","Noto Serif SC","Manrope"]}]
+### Ran Playwright code
+```js
+await (async (page) => {
+ const results=[];
+ for (const name of ['d','e','f','g','h','i']) {
+  await page.setViewportSize({width:1280,height:720});
+  await page.goto('http://127.0.0.1:8769/slide-previews/style-'+name+'.html');
+  await page.evaluate(()=>document.fonts.ready);
+  await page.waitForTimeout(1300);
+  await page.screenshot({path:'output/playwright/style-'+name+'.png'});
+  const check=await page.evaluate(()=>{
+   const stage=document.querySelector('.deck-stage').getBoundingClientRect();
+   const texts=[...document.querySelectorAll('h1,p,header,footer')].map(el=>{const r=el.getBoundingClientRect();return {text:el.innerText,inside:r.left>=stage.left-1&&r.top>=stage.top-1&&r.right<=stage.right+1&&r.bottom<=stage.bottom+1};});
+   return {stage:[stage.width,stage.height],texts,fontsLoaded:[...document.fonts].filter(f=>f.status==='loaded').map(f=>f.family)};
+  });
+  await page.setViewportSize({width:390,height:844});
+  await page.screenshot({path:'output/playwright/style-'+name+'-phone.png'});
+  results.push({name,...check});
+ }
+ await page.setViewportSize({width:1280,height:720});
+ return results;
+})(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8769/slide-previews/style-i.html
+- Page Title: AI 浪潮下，我们应该如何应对与学习｜AI悦创

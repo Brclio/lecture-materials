@@ -1,0 +1,84 @@
+/* === PRESENTATION UI: OUTSIDE THE FIXED SLIDE STAGE === */
+.deck-ui{position:relative;z-index:1200;font-family:'Noto Sans SC',sans-serif;color:#1a1a2e;font-size:14px;line-height:1.5}
+.deck-ui *{box-sizing:border-box}
+.deck-ui button,.deck-ui input{font:inherit}
+.deck-ui button{cursor:pointer}
+.deck-ui button:focus-visible,.deck-ui input:focus-visible{outline:3px solid #2b7fd8;outline-offset:3px}
+.deck-ui button:disabled{cursor:default;opacity:.34}
+.deck-ui [hidden]{display:none!important}
+.deck-controls{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);display:flex;align-items:center;gap:4px;margin:0;padding:5px 7px;max-width:calc(100vw - 24px);white-space:nowrap;border:1px solid #ded8c9;border-radius:12px;background:#fefcf6;color:#1a1a2e;box-shadow:0 3px 18px #1a1a2e12;z-index:1201;opacity:1;transition:opacity .18s ease-out}
+.deck-controls button{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:6px 12px;border:0;border-radius:7px;background:transparent;color:#1a1a2e;font-size:13px;font-weight:700;line-height:1.4}
+.deck-controls button:not(:disabled):hover,.deck-controls button[aria-pressed=true]{background:#fff3cd}
+.deck-counter{display:inline-block;min-width:64px;text-align:center;font-size:13px;color:#4a4a5a;font-variant-numeric:tabular-nums}
+.deck-control-divider{height:21px;width:1px;background:#ded8c9;margin:0 4px}
+.deck-step-count{padding:0 6px;color:#73737d;font-size:11px;font-variant-numeric:tabular-nums}
+.deck-step-count:empty{display:none}
+.deck-progress{position:fixed;top:0;left:0;right:0;height:3px;pointer-events:none;background:#1a1a2e08;z-index:1201}
+.deck-progress-fill{height:100%;background:#f4d758;transform-origin:0 50%;transition:transform .2s ease-out}
+.deck-ui-idle .deck-controls{opacity:0;pointer-events:none}
+.deck-ui-idle .deck-controls:focus-within,.deck-ui-idle .deck-controls:hover{opacity:1;pointer-events:auto}
+.deck-toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);max-width:calc(100vw - 36px);padding:11px 18px;background:#1a1a2e;color:#fefcf6;border-radius:8px;font-size:13px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease-out;z-index:1600}
+.deck-toast.show{opacity:1;visibility:visible}
+
+/* === OPTIONAL STEPS: ONLY CONTENT EXPLICITLY MARKED data-step === */
+.deck-ready .slide [data-step]{transition:opacity .28s cubic-bezier(.16,1,.3,1),transform .28s cubic-bezier(.16,1,.3,1)}
+.deck-ready .slide .deck-step-hidden{opacity:0!important;visibility:hidden!important;transform:translateY(12px);pointer-events:none!important}
+.speaker-notes{display:none!important}
+.slide [data-toggle-target]{cursor:pointer}
+.slide [data-toggle-target]:focus-visible{outline:4px solid #2b7fd8;outline-offset:5px}
+.slide [data-toggle-target][aria-pressed=true]{text-decoration:underline;text-decoration-color:#f4d758;text-decoration-thickness:5px;text-underline-offset:8px}
+
+/* === EDITING: DELAYED HOVER BUTTON AND VISIBLE EDITABLE TEXT TARGETS === */
+.deck-edit-hotzone{position:fixed;top:0;left:0;width:80px;height:80px;margin:0;padding:0;border:0;background:transparent;z-index:1400}
+.deck-edit-toggle{position:fixed;left:16px;top:16px;min-height:38px;padding:9px 15px;border:1px solid #ded8c9;border-radius:8px;background:#fefcf6;color:#1a1a2e;font-size:13px;font-weight:700;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease-out;z-index:1401}
+.deck-edit-toggle.show,.deck-edit-toggle.active{opacity:1;visibility:visible;pointer-events:auto}
+.deck-edit-toggle.active{background:#f4d758;border-color:#f4d758}
+.deck-editing [data-edit]{outline:2px dashed #2b7fd880;outline-offset:6px;cursor:text;caret-color:#e84a5f}
+.deck-editing [data-edit]:focus{outline:3px solid #2b7fd8;background-color:#f4d75812}
+.deck-editing [data-edit]{white-space:pre-wrap}
+
+/* === DIRECTORY: MODAL CHAPTER LIST, SEARCH AND KEYBOARD FOCUS === */
+.deck-directory-backdrop{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;background:#151821a6;z-index:1500}
+.deck-directory{display:flex;flex-direction:column;width:min(900px,100%);max-height:min(800px,calc(100dvh - 48px));background:#fefcf6;border-radius:16px;box-shadow:0 20px 80px #15182130;padding:24px 28px}
+.deck-panel-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 18px}
+.deck-panel-header h2{font-family:'Noto Serif SC',serif;font-weight:900;font-size:23px;line-height:1.5;color:#1a1a2e;margin:0}
+.deck-panel-header button{border:0;background:transparent;color:#4a4a5a;padding:6px 9px;font-size:13px;border-radius:6px;white-space:nowrap}
+.deck-panel-header button:hover{background:#fff3cd}
+.deck-directory-search{width:100%;padding:12px 14px;margin-bottom:20px;border:1px solid #d8d1bf;border-radius:8px;background:#faf6eb;color:#1a1a2e;font-size:15px;outline-offset:2px}
+.deck-directory-list{overflow:auto;overscroll-behavior:contain;padding:0 8px 0 1px;scrollbar-color:#ccc3ae #faf6eb;scrollbar-width:thin}
+.deck-directory-group{margin:0 0 20px}
+.deck-directory-group h3{font:700 13px/1.5 'Noto Sans SC',sans-serif;letter-spacing:.04em;color:#2b7fd8;margin:0 0 9px;padding:0 10px}
+.deck-directory-item{display:flex;align-items:baseline;gap:14px;width:100%;padding:10px 12px;border:0;border-radius:7px;text-align:left;color:#1a1a2e;background:transparent;font-size:14px;line-height:1.6}
+.deck-directory-item:hover{background:#faf1d4}
+.deck-directory-item[aria-current=page]{background:#fff3cd}
+.deck-directory-number{flex:0 0 28px;color:#8a8a9a;font-variant-numeric:tabular-nums}
+.deck-directory-item[aria-current=page] .deck-directory-number{color:#2b7fd8;font-weight:700}
+.deck-directory-label{min-width:0;overflow-wrap:anywhere}
+.deck-directory-empty{font-size:15px;color:#73737d;padding:20px 4px;margin:0}
+
+/* === PRIVATE-BY-DEFAULT SPEAKER NOTES AND OPTIONAL TALK TIMER === */
+.deck-notes-panel{position:fixed;right:16px;top:16px;bottom:76px;width:min(410px,calc(100vw - 32px));overflow:auto;overscroll-behavior:contain;padding:22px;background:#fefcf6;border:1px solid #ded8c9;border-radius:12px;box-shadow:0 8px 40px #15182128;z-index:1450}
+.deck-notes-panel .deck-panel-header{margin-bottom:15px}
+.deck-notes-panel .deck-panel-header h2{font-size:21px}
+.deck-timer{display:flex;align-items:center;gap:8px;padding:13px 0 18px;border-bottom:1px solid #e5dfd1;margin-bottom:19px}
+.deck-timer output{font-size:26px;line-height:1.3;font-weight:700;font-variant-numeric:tabular-nums;color:#2b7fd8;margin-right:auto}
+.deck-timer button{font-size:12px;padding:7px 9px;border:1px solid #ded8c9;background:#faf6eb;border-radius:6px;color:#4a4a5a;white-space:nowrap}
+.deck-timer button:hover{background:#fff3cd}
+.deck-notes-location{font-size:12px;color:#8a8a9a;line-height:1.7;margin:0 0 8px}
+.deck-notes-title{font-family:'Noto Serif SC',serif;font-size:21px;font-weight:900;line-height:1.6;margin:0 0 19px;color:#1a1a2e}
+.deck-notes-copy{font-size:15px;line-height:1.95;white-space:pre-wrap;overflow-wrap:anywhere;color:#4a4a5a}
+
+/* === SMALL SCREEN CHROME ONLY: SLIDE CONTENT NEVER REFLOWS === */
+@media(max-width:900px){.deck-controls{bottom:9px;gap:1px;padding:4px}.deck-controls button{padding:6px 9px;font-size:12px}.deck-counter{min-width:55px;font-size:12px}.deck-step-count{font-size:10px;padding:0 3px}.deck-directory-backdrop{padding:14px}.deck-directory{padding:20px;max-height:calc(100dvh - 28px)}.deck-panel-header h2{font-size:20px}}
+@media(max-width:560px){.deck-controls{max-width:calc(100vw - 12px);gap:0}.deck-controls button{padding:6px 7px;font-size:11px;min-height:34px}.deck-control-divider{margin:0 1px}.deck-controls [data-action=fullscreen]{display:none}.deck-step-count{display:none}.deck-counter{min-width:49px}.deck-toast{bottom:66px;font-size:12px}.deck-notes-panel{right:9px;left:9px;width:auto;top:9px;bottom:65px;padding:19px}.deck-directory{padding:18px 14px}.deck-directory-item{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.deck-ready .slide [data-step],.deck-controls,.deck-progress-fill,.deck-toast,.deck-edit-toggle{transition:none!important}.deck-ready .slide .deck-step-hidden{transform:none!important}}
+.deck-export .deck-ui,.deck-embed .deck-ui{display:none!important}
+
+/* === PRINT / PDF: ALL AUTHORED STEPS, NO TOOLS OR SPEAKER NOTES === */
+@media print{
+ .deck-ui,[data-deck-ui],.speaker-notes{display:none!important}
+ .deck-stage{transform:none!important}
+ .slide{visibility:visible!important;opacity:1!important;pointer-events:auto!important}
+ .slide [data-step],.deck-ready .slide .deck-step-hidden{visibility:visible!important;opacity:1!important;transform:none!important;pointer-events:auto!important;transition:none!important}
+ .deck-editing [data-edit]{outline:none!important;background-color:transparent!important}
+}

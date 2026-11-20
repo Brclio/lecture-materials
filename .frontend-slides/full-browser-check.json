@@ -1,0 +1,605 @@
+{
+  "checks": [
+    {
+      "id": "01",
+      "title": "AI 浪潮下， 我们应该如何应对与学习？",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "02",
+      "title": "今天，带走一条可以开始的路",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "03",
+      "title": "先看见，想法如何变成现实",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "04",
+      "title": "把学习，变成一个循环",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "05",
+      "title": "你好，我是悦创",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "06",
+      "title": "从学习者，到自己的作品",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "07",
+      "title": "拥有你的互联网门牌号",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "08",
+      "title": "经营“自己”这家公司",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "09",
+      "title": "你的网站，不必只有一种样子",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "10",
+      "title": "六百多份简历之后， 我想看到什么？",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "11",
+      "title": "把能力，变成看得见的作品",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "12",
+      "title": "降低别人了解你的成本",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "13",
+      "title": "过去做过的事， 会成为信任的依据",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "14",
+      "title": "平台负责传播， 网站负责积累",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "15",
+      "title": "学 Python，先练逻辑",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "16",
+      "title": "用一个小项目开始",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "17",
+      "title": "真正要练的，是这四种能力",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "18",
+      "title": "让专业与 AI 相乘",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "19",
+      "title": "把经验沉淀成 Skills",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "20",
+      "title": "选电脑，先看任务",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "21",
+      "title": "装得下 ≠ 跑得快",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "22",
+      "title": "我看重的是：更容易开始",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "23",
+      "title": "让需求，决定你的选择",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "24",
+      "title": "让工具服务你的任务",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "25",
+      "title": "把操作教程带走",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "26",
+      "title": "怎样知道自己真的懂了？",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "27",
+      "title": "我们的共识， 可能是没有共识",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "28",
+      "title": "好的讲解，要讲“透”",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "29",
+      "title": "长期做内容， 让机会有迹可循",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "30",
+      "title": "两家油饼摊，两种选择",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "31",
+      "title": "把价值留给别人， 把路走长",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "32",
+      "title": "别再偷偷学",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "33",
+      "title": "AI 给出答案， 你负责判断",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "34",
+      "title": "把问题说具体， 下一轮才有效",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "35",
+      "title": "跟有结果的人学习",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "36",
+      "title": "学习材料，应当服务你的目标",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "37",
+      "title": "从考试导向， 转向成长导向",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "38",
+      "title": "人人都可以成为 Builder",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "39",
+      "title": "做出来更容易， 判断与传播更重要",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "40",
+      "title": "成为 Builder 的三种素质",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "41",
+      "title": "Creator 与 Builder， 可以是同一个人",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "42",
+      "title": "先学会：记录、版本与表达",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "43",
+      "title": "连接模型，复用流程",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "44",
+      "title": "让作品上线， 让别人真正用到",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "45",
+      "title": "为自己开发工具",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "46",
+      "title": "进阶：把模型带到本地",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "47",
+      "title": "认识工具与模型的边界",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "48",
+      "title": "最重要的， 仍然是你自己的想法",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "49",
+      "title": "今天的内容， 可以继续带走",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    },
+    {
+      "id": "50",
+      "title": "从你的第一个问题开始",
+      "active": 1,
+      "outside": [],
+      "overlaps": [],
+      "images": true,
+      "stage": {
+        "w": 1280,
+        "h": 720
+      }
+    }
+  ],
+  "errors": []
+}

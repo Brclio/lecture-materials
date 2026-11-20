@@ -1,0 +1,53 @@
+{
+  "checked_at_utc": "2026-11-18T15:18:34.927466+00:00",
+  "method": "HTTP GET, redirects followed, 18 second timeout, first 512 KiB only",
+  "links": {
+    "https://ai.bornforthis.cn/MemorySpark/FinalVersion.html": {
+      "status": 200,
+      "final_url": "https://ai.bornforthis.cn/MemorySpark/FinalVersion.html",
+      "page_title": "MemorySpark｜ai.bornforthis.cn AI实验室",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://ai.bornforthis.cn/ARGarden/": {
+      "status": 200,
+      "final_url": "https://ai.bornforthis.cn/ARGarden/",
+      "page_title": "指尖上的灵动花园｜Bornforthis AI实验室",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://bornforthis.cn/column/Python-Programming-Course/Preface.html": {
+      "status": 200,
+      "final_url": "https://bornforthis.cn/column/Python-Programming-Course/Preface",
+      "page_title": "前言·你一定得读！ | AI悦创-Python一对一辅导",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://bornforthis.cn/column/Python-Programming-Course/P10-Share/01-Cloudflare-Email-build.html": {
+      "status": 200,
+      "final_url": "https://bornforthis.cn/column/Python-Programming-Course/P10-Share/01-Cloudflare-Email-build",
+      "page_title": "零成本搭建团队域名邮箱：Cloudflare Email Routing 完全指南 | AI悦创-Python一对一辅导",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://bornforthis.cn/column/Python-Programming-Course/P18-Codex/06-create-codex-skills-from-conversation.html": {
+      "status": 200,
+      "final_url": "https://bornforthis.cn/column/Python-Programming-Course/P18-Codex/06-create-codex-skills-from-conversation",
+      "page_title": "Codex Skills 制作教程：把对话流程保存成 Skill，下次直接复用 | AI悦创-Python一对一辅导",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://bornforthis.cn/column/Python-Programming-Course/P18-Codex/02-ChatGPT-Plus-Chain-Card.html": {
+      "status": 200,
+      "final_url": "https://bornforthis.cn/column/Python-Programming-Course/P18-Codex/02-ChatGPT-Plus-Chain-Card",
+      "page_title": "02-不用代充、不买虚拟卡！用自己的国内银行卡订阅 ChatGPT/Claude Plus | AI悦创-Python一对一辅导",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://bornforthis.cn/column/Python-Programming-Course/P18-Codex/04-ChatGPT-Plus-China-Guide.html": {
+      "status": 200,
+      "final_url": "https://bornforthis.cn/column/Python-Programming-Course/P18-Codex/04-ChatGPT-Plus-China-Guide",
+      "page_title": "04-用支付宝买美区 Apple 礼品卡，在 iPhone 上订阅 ChatGPT Plus | AI悦创-Python一对一辅导",
+      "content_type": "text/html; charset=utf-8"
+    }
+  },
+  "qr_generation_readiness": {
+    "qrcode": true,
+    "segno": false,
+    "PIL": true
+  }
+}

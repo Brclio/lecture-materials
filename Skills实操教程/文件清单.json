@@ -1,0 +1,22 @@
+{
+  "00-阅读说明.md": {
+    "bytes": 477,
+    "sha256": "57b221b5a3134c94c987c7cf4341c44e71bde16b094549c3b0b8eb4b9b24437f"
+  },
+  "从零制作第一个Skill.md": {
+    "bytes": 2329,
+    "sha256": "767ef33d45ccbceef3769bcc1f1d42cda852392db34ba6ede0518f573a4581d7"
+  },
+  "Skills实操教程.html": {
+    "bytes": 382409,
+    "sha256": "c020d33b665d584242f663fe7c8da275ac2aef604be5a52d7f9d677bd00d1495"
+  },
+  "制作与验证记录.md": {
+    "bytes": 1320,
+    "sha256": "12228fb57bcd5317aa21534f56faaf486d703b8ef38a1e437f026617d3ba6ba9"
+  },
+  "assets/skills-guide-illustrations/01-reusable-skill-white.png": {
+    "bytes": 483396,
+    "sha256": "d1a388cb20fc34a3e30dddf5ac5d644688a3e33be5333c030a93fdbc270e6f35"
+  }
+}

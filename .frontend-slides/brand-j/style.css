@@ -1,0 +1,69 @@
+/* === BRCLIO BRAND VARIABLES: ADAPTED FROM template-landing.html === */
+:root {
+  --_brclio-ds:"brclio-v1";
+  --blue:#2B7FD8;
+  --blue-deep:#1E5BA8;
+  --yellow:#F4D758;
+  --yellow-soft:#FFF3CD;
+  --red:#E84A5F;
+  --cream:#fefcf6;
+  --cream-dark:#faf6eb;
+  --ink:#1A1A2E;
+  --ink-light:#4A4A5A;
+  --ink-faint:#8A8A9A;
+  --slide-bg:var(--cream);
+  --stage-bg:var(--cream-dark);
+}
+.j-canvas,.j-canvas * {box-sizing:border-box;margin:0;padding:0;}
+.j-canvas {position:absolute;inset:0;overflow:hidden;background:var(--cream);color:var(--ink);font-family:'Noto Sans SC',sans-serif;}
+.j-canvas ::selection {background:var(--yellow);color:var(--ink);}
+.j-header {position:absolute;left:118px;right:118px;top:68px;display:flex;justify-content:space-between;align-items:center;color:var(--blue);}
+.j-brand {font:italic 400 49px/1 'Fraunces',serif;letter-spacing:-1px;}
+.j-context {font-size:25px;color:var(--ink-light);letter-spacing:1px;}
+.j-footer {position:absolute;left:118px;right:118px;bottom:82px;display:flex;justify-content:space-between;align-items:center;font-size:25px;color:var(--ink-light);}
+.j-footer .j-page {font:italic 400 32px/1 'Fraunces',serif;color:var(--blue);}
+.j-baseband {position:absolute;left:0;right:0;bottom:0;height:40px;background:var(--blue);}
+.j-red-mark {display:inline-block;width:18px;height:18px;background:var(--red);margin-right:17px;}
+.j-label {font-size:27px;line-height:1.4;color:var(--ink-light);}
+.j-serif {font-family:'Noto Serif SC',serif;font-weight:900;letter-spacing:0;}
+
+/* === COVER: TEMPLATE HERO, FIXED ASYMMETRICAL COMPOSITION === */
+.j-hero {position:absolute;left:118px;top:245px;width:1080px;}
+.j-hero .j-kicker {font-size:39px;color:var(--blue);font-weight:700;line-height:1.5;margin-bottom:27px;}
+.j-hero h1 {font:900 108px/1.42 'Noto Serif SC',serif;letter-spacing:0;color:var(--blue);}
+.j-hero h1 .j-keyword {position:relative;display:inline-block;isolation:isolate;}
+.j-hero h1 .j-keyword::after {content:'';position:absolute;left:-5px;right:-7px;bottom:11px;height:40px;background:var(--yellow);z-index:-1;}
+.j-hero .j-subtitle {font-size:35px;line-height:1.6;color:var(--ink);margin-top:40px;}
+.j-hero .j-author {display:flex;align-items:center;font-size:26px;color:var(--ink-light);margin-top:42px;}
+.j-character-ring {position:absolute;left:1296px;top:365px;width:476px;height:476px;border:40px solid var(--yellow);border-radius:50%;}
+.j-character {position:absolute;left:1392px;top:173px;width:330px;height:830px;overflow:hidden;}
+.j-character img {position:absolute;left:-375px;top:-80px;width:950px!important;height:950px!important;max-width:none!important;max-height:none!important;object-fit:contain;}
+.j-handnote {position:absolute;left:1170px;top:786px;color:var(--blue);font:700 47px/1.1 'Caveat',cursive;width:230px;}
+
+/* === FLOW: COMPONENT #11 SYSTEM FLOW, OPEN EDITORIAL STEPS === */
+.j-flow-canvas {background:var(--cream-dark);}
+.j-section-head {position:absolute;left:118px;top:215px;right:118px;}
+.j-section-head h2 {font:900 86px/1.4 'Noto Serif SC',serif;color:var(--blue);margin-top:21px;}
+.j-system-flow {position:absolute;left:118px;right:118px;top:451px;display:grid;grid-template-columns:1fr 110px 1fr 110px 1fr;align-items:center;gap:28px;}
+.j-flow-step {position:relative;min-width:0;padding-top:10px;}
+.j-step-number {display:block;font:italic 400 170px/1 'Fraunces',serif;color:var(--blue);opacity:.19;}
+.j-flow-step h3 {font:900 51px/1.45 'Noto Serif SC',serif;margin-top:36px;color:var(--blue);white-space:nowrap;}
+.j-flow-step p {font-size:30px;line-height:1.7;margin-top:18px;color:var(--ink-light);white-space:nowrap;}
+.j-flow-arrow {font:400 95px/1 'Noto Sans SC',sans-serif;color:var(--yellow);transform:translateY(40px);text-align:center;}
+.j-flow-summary {position:absolute;left:118px;top:867px;display:flex;align-items:center;gap:18px;color:var(--ink);font-size:30px;}
+.j-flow-summary::before {content:'';width:40px;height:40px;background:var(--yellow);}
+.j-flow-canvas .j-footer {bottom:70px;}
+.j-flow-canvas .j-baseband {height:40px;}
+
+/* === QUOTE: COMPONENT #40 ULTRA-MINIMAL, BRAND HIGHLIGHTER === */
+.j-quote-mark {position:absolute;left:108px;top:204px;font:400 400px/.9 'Fraunces',serif;color:var(--yellow);pointer-events:none;}
+.j-quote {position:absolute;left:312px;top:350px;width:1430px;text-align:left;}
+.j-quote .j-quote-lead {font:900 103px/1.5 'Noto Serif SC',serif;color:var(--blue);}
+.j-quote .j-quote-conclusion {position:relative;display:inline-block;isolation:isolate;font:900 129px/1.5 'Noto Serif SC',serif;color:var(--ink);margin-top:4px;}
+.j-quote .j-quote-conclusion::after {content:'';position:absolute;left:0;right:18px;bottom:21px;height:40px;background:var(--yellow);z-index:-1;}
+.j-quote .j-quote-support {font-size:34px;line-height:1.7;margin-top:51px;color:var(--ink-light);}
+.j-quote-avatar {position:absolute;right:115px;top:172px;width:110px;height:110px;border-radius:50%;object-fit:cover;}
+.j-quote-canvas .j-quote-label {position:absolute;left:312px;top:249px;font-size:26px;letter-spacing:2px;color:var(--blue);}
+.j-quote-canvas .j-footer {color:var(--ink-light);}
+
+/* === SOURCE: Brclio/brclio-design-system — CC BY-NC-SA 4.0 === */

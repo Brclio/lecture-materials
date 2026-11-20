@@ -1,0 +1,29 @@
+/* === CREATIVE COLLAGE / THE FIRST PAGE OF A NEW IDEA === */
+:root { --slide-bg:#2146e8; --stage-bg:#121b46; }
+.slide { padding:0; }
+.g-artboard { position:absolute; inset:0; overflow:hidden; color:#0d2596; background:#2146e8; font-family:'Noto Sans SC',sans-serif; }
+.g-top { position:absolute; left:106px; right:106px; top:70px; display:flex; justify-content:space-between; color:#f4efd8; font-size:27px; align-items:center; }
+.g-top strong { font-weight:800; }
+.g-grid { position:absolute; inset:0; opacity:.11; background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px); background-size:72px 72px; }
+.g-underpaper { position:absolute; left:186px; top:224px; width:1555px; height:652px; background:#142db0; border:2px solid #12298a; transform:rotate(2deg); }
+.g-paper { position:absolute; left:118px; top:188px; width:1618px; height:668px; background:#f6f0da; transform:rotate(-3deg); border:3px solid #102685; box-shadow:18px 18px 0 rgba(12,30,110,.55); }
+.g-paper::before { content:''; position:absolute; inset:14px; border:1px solid rgba(24,49,139,.19); pointer-events:none; }
+.g-paper::after { content:''; position:absolute; right:-3px; bottom:-3px; border-style:solid; border-width:0 0 94px 94px; border-color:transparent transparent #2146e8 #c3baa0; }
+.g-kicker { position:absolute; left:75px; top:60px; padding:13px 30px 16px; background:#ffe448; border:3px solid #14278a; font-size:43px; font-weight:800; line-height:1.25; transform:rotate(-2deg); box-shadow:5px 5px 0 #182d9c; }
+.g-title { position:absolute; left:82px; top:222px; font-weight:800; font-size:139px; line-height:1.22; letter-spacing:0; margin:0; }
+.g-title span { display:block; }
+.g-title span:last-child { position:relative; z-index:0; margin-top:13px; }
+.g-title span:last-child::before { content:''; position:absolute; left:-8px; right:-14px; height:40px; bottom:5px; background:#ffe448; z-index:-1; transform:rotate(-.6deg); }
+.g-margin-note { position:absolute; right:65px; top:204px; font-family:'Barlow','Noto Sans SC',sans-serif; font-weight:900; font-size:38px; line-height:1.4; text-align:center; transform:rotate(7deg); }
+.g-margin-note span { display:block; font-family:'Noto Sans SC',sans-serif; font-weight:400; font-size:26px; margin-top:8px; }
+.g-sticker { position:absolute; right:48px; top:128px; width:248px; height:248px; background:#ffe448; color:#1933b6; border:3px solid #102685; border-radius:50%; transform:rotate(12deg); display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:8px 8px 0 #112791; }
+.g-sticker b { font-family:'Barlow',sans-serif; font-weight:900; font-size:119px; line-height:.9; letter-spacing:-6px; }
+.g-sticker span { font-size:25px; font-weight:800; margin-top:13px; }
+.g-spark { position:absolute; width:135px; height:135px; left:48px; bottom:118px; fill:#ffe448; transform:rotate(8deg); }
+.g-subtitle { position:absolute; left:242px; top:932px; color:#fff4d1; font-size:41px; font-weight:800; line-height:1.2; transform:rotate(-1deg); }
+.g-line { position:absolute; right:113px; bottom:83px; width:212px; border-top:3px solid #fff4d1; }
+.g-line::after { content:''; position:absolute; right:0; top:-10px; width:17px; height:17px; border-right:3px solid #fff4d1; border-top:3px solid #fff4d1; transform:rotate(45deg); }
+.g-reveal { animation:g-arrive .8s cubic-bezier(.16,1,.3,1) both; }
+.g-delay1 { animation-delay:.12s; }.g-delay2 { animation-delay:.24s; }.g-delay3 { animation-delay:.34s; }
+@keyframes g-arrive { from { opacity:0; translate:0 35px; } to { opacity:1; translate:0 0; } }
+@media (prefers-reduced-motion:reduce) { .g-artboard * { animation:none!important; } }

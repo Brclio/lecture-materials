@@ -1,0 +1,62 @@
+/* === BRCLIO TEMPLATE TOKENS — ADAPTED FROM template-landing.html === */
+:root{--_brclio-ds:"brclio-v1";--blue:#2B7FD8;--blue-deep:#1E5BA8;--yellow:#F4D758;--yellow-soft:#FFF3CD;--red:#E84A5F;--cream:#fefcf6;--cream-dark:#faf6eb;--ink:#1A1A2E;--ink-light:#4A4A5A;--ink-faint:#8A8A9A;--dark-panel:#151821;--slide-bg:#fefcf6;--stage-bg:#151821}
+.k-cover,.k-flow-page,.k-quote-page{position:absolute;inset:0;overflow:hidden;font-family:'Noto Sans SC',sans-serif;color:var(--ink);background:var(--cream)}
+.k-cover *, .k-flow-page *, .k-quote-page *{box-sizing:border-box}
+.k-cover h1,.k-flow-page h2,.k-flow-page h3,.k-quote-page .k-quote-text{font-family:'Noto Serif SC',serif;font-weight:900;letter-spacing:0}
+.k-cover p,.k-flow-page p,.k-quote-page p{margin:0}
+::selection{background:var(--yellow);color:var(--ink)}
+
+/* === HERO: THE TEMPLATE'S ASYMMETRIC TEXT / PORTRAIT COMPOSITION === */
+.k-cover-blue{position:absolute;inset:0 570px 0 0;background:var(--blue)}
+.k-cover-top{position:absolute;top:75px;left:100px;right:80px;display:flex;justify-content:space-between;align-items:center;font-size:27px}
+.k-cover-top .k-brand{font-family:'Fraunces',serif;font-size:42px;font-style:italic;color:var(--cream)}
+.k-cover-context{color:var(--blue-deep);font-weight:700}
+.k-cover-kicker{position:absolute;top:245px;left:100px;font-size:48px;font-weight:700;color:var(--yellow)}
+.k-cover-title{position:absolute;left:95px;top:350px;font-size:124px;line-height:1.4;margin:0;color:var(--cream)}
+.k-cover-subtitle{position:absolute;left:100px;top:785px;font-size:36px;line-height:1.7;color:var(--cream)}
+.k-cover-caption{position:absolute;left:100px;bottom:75px;font-family:'Caveat',cursive;font-size:42px;color:var(--yellow)}
+.k-portrait{position:absolute;top:245px;left:1395px;width:480px;height:480px;padding:40px;background:var(--yellow);border-radius:50%;overflow:hidden}
+.k-portrait img{width:400px;height:400px;display:block;object-fit:cover;border-radius:50%}
+.k-author{position:absolute;left:1395px;top:790px;width:480px}
+.k-author-name{font:italic 78px/1.1 'Fraunces',serif;color:var(--blue-deep)}
+.k-author-line{font-size:26px;line-height:1.8;margin-top:22px!important;color:var(--ink-light)}
+.k-red-stamp{position:absolute;left:1330px;top:165px;width:40px;height:40px;background:var(--red)}
+.k-cover-credit{position:absolute;right:80px;bottom:75px;font-size:25px;color:var(--ink-light)}
+
+/* === CONTENT: COMPONENT #11 FLOW ARROW, PRESENTATION-SCALE ADAPTATION === */
+.k-side{position:absolute;left:0;top:0;bottom:0;width:420px;background:var(--blue);color:var(--cream);padding:75px 55px}
+.k-side-label{font-size:26px;color:var(--yellow);font-weight:700}
+.k-side-word{font:italic 84px/1.1 'Fraunces',serif;margin-top:145px!important}
+.k-side-title{font:900 61px/1.65 'Noto Serif SC',serif;margin-top:32px!important}
+.k-side-num{position:absolute;left:48px;bottom:55px;font:italic 240px/1 'Fraunces',serif;opacity:.15;color:var(--cream)}
+.k-content-top{position:absolute;left:495px;right:85px;top:80px;display:flex;justify-content:space-between;font-size:26px;color:var(--ink-light)}
+.k-flow-title{position:absolute;left:495px;top:190px;margin:0;font-size:72px;line-height:1.4;color:var(--blue-deep)}
+.k-system-flow{position:absolute;left:495px;top:405px;width:1340px;height:405px;display:flex;gap:95px;align-items:stretch}
+.k-step{position:relative;flex:1;min-width:0;padding:30px 0 25px}
+.k-step-number{font:italic 104px/1 'Fraunces',serif;color:var(--blue);display:block;margin-bottom:55px;opacity:.32}
+.k-step h3{font-size:42px;line-height:1.5;margin:0 0 22px;white-space:nowrap}
+.k-step p{font-size:27px;line-height:1.65;color:var(--ink-light)}
+.k-flow-arrow{position:absolute;top:197px;right:-28px;font-family:'Noto Sans SC',sans-serif;font-size:42px;color:var(--blue);font-weight:400;line-height:1}
+.k-step-active{background:var(--blue);color:var(--cream);padding:30px 32px 25px;margin-left:-32px;margin-right:-32px}
+.k-step-active .k-step-number{color:var(--yellow);opacity:1}
+.k-step-active h3{font-size:42px}
+.k-step-active p{color:var(--cream)}
+.k-step-active .k-flow-arrow{right:-28px}
+.k-flow-footer{position:absolute;left:495px;right:85px;bottom:85px;display:flex;justify-content:space-between;align-items:center;font-size:25px;color:var(--ink-light)}
+.k-flow-footer strong{font-family:'Caveat',cursive;font-size:41px;color:var(--blue);font-weight:700}
+.k-flow-footer i{display:inline-block;width:22px;height:22px;background:var(--red);border-radius:50%;margin-right:15px;vertical-align:-3px}
+
+/* === QUOTE: COMPONENTS #3A + #40, WITH THE TEMPLATE'S FULL-WIDTH PANEL === */
+.k-quote-topbar{position:absolute;left:0;right:0;top:0;height:40px;background:var(--yellow)}
+.k-quote-header{position:absolute;top:90px;left:110px;right:110px;display:flex;justify-content:space-between;align-items:center;font-size:26px;color:var(--ink-light)}
+.k-quote-header b{font-weight:700;color:var(--blue)}
+.k-giant-quote{position:absolute;left:120px;top:185px;font:italic 330px/1 'Fraunces',serif;color:var(--yellow);opacity:.65}
+.k-quote-text{position:absolute;left:325px;top:240px;font-size:120px;line-height:1.55;color:var(--blue-deep)}
+.k-quote-text strong{font:inherit;color:var(--blue);background:linear-gradient(transparent 76%,rgba(244,215,88,.7) 76%);padding:0 7px}
+.k-quote-panel{position:absolute;left:0;right:0;bottom:0;height:290px;background:var(--blue);color:var(--cream);padding:60px 110px;display:flex;justify-content:space-between;align-items:center}
+.k-quote-panel p{font-size:37px;line-height:1.8}
+.k-quote-panel .k-quote-author{font-size:28px;color:var(--yellow);margin-top:18px!important}
+.k-quote-signature{font:700 47px/1.25 'Caveat',cursive;color:var(--yellow);text-align:right}
+.k-quote-dot{position:absolute;right:100px;top:655px;width:40px;height:40px;background:var(--red);border-radius:50%}
+
+/* === ROOT CONTROLLER HANDLES REVEAL, REDUCED MOTION AND STAGE SCALING === */
