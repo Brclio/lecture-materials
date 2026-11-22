@@ -324,7 +324,9 @@ body[data-current="1"] .mastinfo { visibility:hidden; }
 .rd-early .b-steps i{display:block;width:30px;height:6px;background:#d1d8d8}
 .rd-early .b-steps i.on{background:#164f83}
 .rd-early[data-p="1"] .b-body{justify-content:center;padding:50px 2.8% 65px}
-.rd-early[data-p="1"] .b-art{position:absolute;right:-1%;bottom:-1%;height:100%;width:80%;object-fit:cover;object-position:85% 85%;opacity:.48;z-index:-1;mask-image:linear-gradient(90deg,transparent 0%,black 52%)}
+.rd-early[data-p="1"] .b-art{position:absolute;right:-1%;bottom:-1%;height:100%;width:80%;background:var(--cover-sea) 85% 85% / cover no-repeat;opacity:.56;z-index:-1;mask-image:linear-gradient(90deg,transparent 0%,black 52%)}
+#first-cover h1{white-space:nowrap}
+#first-cover h1 b{font-size:1.10em;font-weight:inherit;line-height:0;vertical-align:baseline;letter-spacing:inherit}
 .rd-early .b-cover-copy{display:grid;gap:34px;margin-bottom:54px}
 .rd-early .b-cover-copy h1{font-size:157px;line-height:1.1}
 .rd-early .b-cover-copy h1 span{display:block;font-size:91px;letter-spacing:-.03em;margin-bottom:10px}
@@ -519,9 +521,9 @@ body[data-current="1"] .mastinfo { visibility:hidden; }
  .rd-early .b-steps{position:static;justify-content:flex-start;gap:4px}
  .rd-early .b-steps span{font-size:13px}.rd-early .b-steps i{width:13px;height:4px}
  .rd-early[data-p="1"] .b-body{padding:35px 5px;min-height:100%}
- .rd-early[data-p="1"] .b-art{height:80%;width:130%;max-width:none;right:0;bottom:0}
+ .rd-early[data-p="1"] .b-art{height:93.6%;width:152.1%;max-width:none;right:0;bottom:24px}
  .rd-early .b-cover-copy{gap:23px;margin:0 0 48px}
- .rd-early .b-cover-copy h1{font-size:clamp(39px,10.2vw,75px);line-height:1.4}
+ .rd-early .b-cover-copy h1{font-size:clamp(min(39px,10.8vw),10.2vw,75px);line-height:1.4}
  .rd-early .b-cover-copy h1 span{font-size:.83em;margin-bottom:2px}
  .rd-early .b-cover-copy .b-sub{font-size:19px;max-width:14em}
  .rd-early .b-speaker{bottom:27px;left:4px;gap:6px;flex-wrap:wrap}
@@ -940,7 +942,25 @@ body:has(.slide.lp-43.is-active),body:has(.slide.lp-43.is-active) .frame{backgro
   .rd-early[data-p="1"] { overflow:visible; background-color:transparent; }
   .rd-early[data-p="1"] .b-art {
     inset:-72px -72px auto; width:calc(100% + 144px); height:calc(100% + 134px); max-width:none;
-    object-fit:cover; object-position:center; mask-image:none; opacity:.46;
+    /* The top of the original image supplies the blue paper texture. */
+    --paper-wash:color-mix(in srgb,var(--page) 54%,transparent);
+    background:linear-gradient(var(--paper-wash),var(--paper-wash)),var(--cover-sea) center top / 100% 175% no-repeat;
+    mask-image:none; opacity:1;
+  }
+  #first-cover .b-art::before,#first-cover .b-art::after {
+    content:""; position:absolute; inset:0 0 62px;
+    background:var(--cover-sea) right 0 bottom -36px / 117% auto no-repeat;
+  }
+  #first-cover .b-art::before {
+    opacity:.56;
+    mask-image:linear-gradient(to right,transparent 36%,black 56%),
+               linear-gradient(to bottom,transparent 42%,black 57%,black 92%,transparent);
+    mask-composite:intersect;
+  }
+  #first-cover .b-art::after {
+    /* Lift the original paper folds within the boat's footprint. */
+    opacity:.65; filter:brightness(1.15);
+    mask-image:radial-gradient(ellipse 6% 6% at 64.5% 79.5%,black 66%,transparent);
   }
   body[data-current="16"],body[data-current="16"] .frame,.rd-sheet:has(>[data-p="16"]) {
     background:linear-gradient(to right,#164f83 0 50%,#f4d758 50% 100%);
@@ -981,7 +1001,7 @@ body:has(.slide.lp-43.is-active),body:has(.slide.lp-43.is-active) .frame{backgro
 <symbol id="v-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
 </defs></svg>
 <main id="stage" aria-label="幻灯片">
-<div class="rd-sheet" data-theme="blue" data-print="开场 · 学习与创造　 ·　 01 / 49"><section id="first-cover" class="slide rd rd-early is-active" aria-label="第 1 页，AI 浪潮下，如何学习与创造？" data-print="Brclio · 厦门工学院　　01 / 49" data-chapter="开场 · 学习与创造" data-theme="blue" data-title="AI 浪潮下，如何学习与创造？" data-p="1"><div class="rs-body b-body"><img src="{{F:v3-cover-sea.webp}}" alt="" aria-hidden="true" class="b-art"><div class="b-cover-copy"><p class="b-k">厦门工学院专题讲座</p><h1><span>AI 浪潮下，</span>如何学习与<em>创造？</em></h1><p class="b-sub">不止提出问题，更是把想法做成作品。</p></div><p class="b-speaker"><span>主讲</span><strong>黄家宝</strong><span>AI 悦创 · Brclio</span><i></i>理念 + 交付</p></div><aside class="notes" hidden><p>你好，我是悦创。今天想和你聊三件事：碰到新知识怎么学，要不要学编程，以及怎么把自己的想法做出来。先请大家拿出手机，玩两个我做的小项目。</p></aside></section></div>
+<div class="rd-sheet" data-theme="blue" data-print="开场 · 学习与创造　 ·　 01 / 49"><section id="first-cover" class="slide rd rd-early is-active" aria-label="第 1 页，AI 浪潮下，如何学习与创造？" data-print="Brclio · 厦门工学院　　01 / 49" data-chapter="开场 · 学习与创造" data-theme="blue" data-title="AI 浪潮下，如何学习与创造？" data-p="1"><div class="rs-body b-body"><div class="b-art" aria-hidden="true" style="--cover-sea:url('{{F:v3-cover-sea.webp}}')"></div><div class="b-cover-copy"><p class="b-k">厦门工学院专题讲座</p><h1><span>AI 浪潮下，</span>如何<b>学习</b>与<em><b>创造</b>？</em></h1><p class="b-sub">从提出一个问题，到做出一件作品。</p></div><p class="b-speaker"><span>主讲</span><strong>黄家宝</strong><span>AI 悦创 · Brclio</span><i></i>理念 + 交付</p></div><aside class="notes" hidden><p>你好，我是悦创。今天想和你聊三件事：碰到新知识怎么学，要不要学编程，以及怎么把自己的想法做出来。先请大家拿出手机，玩两个我做的小项目。</p></aside></section></div>
 <div class="rd-sheet" data-theme="blue" data-print="开场 · 学习与创造　 ·　 02 / 49"><section class="slide rd rd-early" hidden aria-label="第 2 页，先玩两个 AI 作品" data-print="Brclio · 厦门工学院　　02 / 49" data-chapter="开场 · 学习与创造" data-theme="blue" data-title="先玩两个 AI 作品" data-p="2"><div class="rs-body b-body"><header class="b-intro"><p class="b-k">拿出手机 · 现场扫码试玩</p><h2>AI 类讲座，先用 <em>AI 作品</em>开场</h2></header><div class="b-games"><article><img src="{{A165375ce}}" alt="记忆圣诞树作品预览" class="b-screen"><div class="b-game-info"><div><h3><a href="https://ai.bornforthis.cn/MemorySpark/FinalVersion.html" target="_blank" rel="noopener noreferrer">记忆圣诞树 ↗</a></h3><p>MemorySpark · 打开即玩</p><small>点击二维码可放大</small></div><button type="button" class="b-qr" data-resource="tree" aria-label="放大记忆圣诞树二维码"><img src="{{Ab770ebc5}}" alt="记忆圣诞树二维码" ></button></div></article><article><img src="{{Ae1de574f}}" alt="指尖上的 AR 花园作品预览" class="b-screen"><div class="b-game-info"><div><h3><a href="https://ai.bornforthis.cn/ARGarden/" target="_blank" rel="noopener noreferrer">指尖上的 AR 花园 ↗</a></h3><p>AR 互动 · 需要开启摄像头</p><small>点击二维码可放大</small></div><button type="button" class="b-qr" data-resource="garden" aria-label="放大指尖上的 AR 花园二维码"><img src="{{A68739cb9}}" alt="指尖上的 AR 花园二维码" ></button></div></article></div><div class="b-strip b-gold"><span>玩完想一想</span><strong>如果是你，最想改哪个细节？</strong></div></div><aside class="notes" hidden><p>你好，我是悦创。AI 类型讲座，就应该用 AI 的创意项目开启。先打开圣诞树，再请一位同学试试 AR 花园（需要相机权限）。听几位同学说说会改什么，再问：如果你想把这个想法做出来，会从哪开始？</p></aside></section></div>
 <div class="rd-sheet" data-theme="cream" data-print="开场 · 学习与创造　 ·　 03 / 49"><section class="slide rd rd-early" hidden aria-label="第 3 页，原则：遇到新知识时的四个习惯" data-print="Brclio · 厦门工学院　　03 / 49" data-chapter="开场 · 学习与创造" data-theme="cream" data-title="原则：遇到新知识时的四个习惯" data-p="3"><div class="rs-body b-body"><img src="{{F:v3-compass.webp}}" alt="" aria-hidden="true" class="b-art"><header class="b-intro"><p class="b-k">大家正在淌的泥泞，就是我曾经跋涉过的路。</p><h2>每次学新东西，<br>我都会做这四件事</h2></header><div class="b-habits"><article><b>01</b><h3>确定问题</h3><p>把“想学 AI”变成一个能验证的目标。</p></article><article><b>02</b><h3>Google + AI 搜索</h3><p>找一篇好文章，顺着线索继续追问。</p></article><article><b>03</b><h3>边学边写</h3><p>一行行实操，弄懂就补进自己的文章。</p></article><article><b>04</b><h3>发布沉淀</h3><p>发到 bornforthis.cn，把博客写成知识库。</p></article></div><div class="b-strip b-blue"><strong>一切的伟大成功，都是从模仿开始的。</strong><span>《羊皮卷》给我的提醒：原则比经验更持久。</span></div></div><aside class="notes" hidden><p>十几年前读《羊皮卷》：经验和时尚有关，只有原则是持久的。原则，就是那些不必每次重新思考、会自动去做的习惯和方法。第三步是重点：一行行跟着博主的文章做，不足的地方补进去。最初是想写出来没准能出名、赚钱，后来发现这是在建自己的知识库。</p></aside></section></div>
 <div class="rd-sheet" data-theme="blue" data-print="Q0 · 为什么听我讲　 ·　 04 / 49"><section class="slide rd rd-early" hidden aria-label="第 4 页，Q0 · 为什么听我讲？" data-print="Brclio · 厦门工学院　　04 / 49" data-chapter="Q0 · 为什么听我讲" data-theme="blue" data-title="Q0 · 为什么听我讲？" data-p="4"><div class="rs-body b-body"><div class="b-q0"><div><b class="b-qbig">Q0</b><h2>为什么<br>听我讲？</h2></div><div class="b-promise"><article><small>我也听过这样的讲座</small><h3>问题说得很准，<br>出了门还是不知道怎么做。</h3></article><article><small>今天，我给你的承诺</small><h3>每个问题都带一个方案。</h3><p>讲稿、教程、作品全部公开，<br>你可以回去照着做，也可以改成自己的。</p></article></div></div></div><aside class="notes" hidden><p>很多讲座只提出问题，不给方案，或者方案只停在口头上，来不及记。在我这里没有这个问题：讲稿、教程、资料全部公开。</p><p>可以从想念大学食堂说起，接一句自己对莆田“美食荒漠”的玩笑，先和同学们聊起来。</p></aside></section></div>
