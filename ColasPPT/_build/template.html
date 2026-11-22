@@ -334,16 +334,124 @@ body[data-current="1"] .mastinfo { visibility:hidden; }
 .rd-early .b-speaker{position:absolute;bottom:64px;left:2.8%;display:flex;align-items:center;gap:23px;color:#fffdf6}
 .rd-early .b-speaker strong{font:760 42px/1 var(--serif)}
 .rd-early .b-speaker i{display:block;height:26px;width:1px;background:#9eb8c9}
-.rd-early[data-p="2"] .b-body{gap:22px}
-.rd-early .b-games{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.rd-early .b-games article{background:#113a60;border:1px solid #61839e;overflow:hidden}
-.rd-early .b-screen{width:100%;height:238px;object-fit:cover;object-position:center}
-.rd-early .b-game-info{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:18px 28px}
-.rd-early .b-game-info h3 a{color:#fff4bd;text-decoration:none}
-.rd-early .b-game-info p{margin:14px 0 8px}
-.rd-early .b-game-info small{color:#ccdfed}
-.rd-early[data-p="2"] .b-strip{justify-content:flex-start;padding:19px 30px}
-.rd-early[data-p="2"] .b-strip span{padding-right:34px;border-right:1px solid #8f7b2b}
+/* 02 / 49 · 现场扫码 */
+body[data-current="2"] :is(.mast, .foot) {
+  border-color: transparent;
+}
+#opening-works .b-body {
+  gap: 22px;
+  padding: 14px 2.8%;
+}
+#opening-works .b-intro {
+  gap: 6px;
+}
+#opening-works .b-games {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+#opening-works .b-games article {
+  overflow: hidden;
+  border: 0;
+  background: #255c88;
+  border-radius: 12px;
+}
+#opening-works .b-screen {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+#opening-works .b-game-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px 12px 28px;
+}
+#opening-works .b-game-info h3 a {
+  color: var(--fg);
+}
+#opening-works .b-game-info p {
+  margin: 6px 0 0;
+  color: #dce7ee;
+  font-size: 26px;
+  line-height: 1.4;
+}
+#opening-works .b-qr {
+  width: 172px;
+  height: 172px;
+  border: 8px solid white;
+  background: white;
+}
+#opening-works .b-qr img {
+  image-rendering: pixelated;
+}
+#opening-works .b-closing,
+#opening-works .b-prompt {
+  display: flex;
+  align-items: center;
+}
+#opening-works .b-closing {
+  gap: 24px;
+}
+#opening-works .b-prompt {
+  gap: 22px;
+  padding: 10px 24px;
+  color: var(--accent);
+  background: rgb(244 215 88 / 6%);
+  border: 1px solid rgb(244 215 88 / 35%);
+  border-radius: 8px;
+}
+#opening-works .b-prompt span {
+  font: 650 20px/1.35 var(--sans);
+  letter-spacing: .06em;
+}
+#opening-works .b-prompt strong {
+  font: 760 38px/1.25 var(--serif);
+}
+#opening-works .b-hint {
+  margin-left: auto;
+  color: #b8cddc;
+  font: 500 20px/1.4 var(--sans);
+}
+#opening-works .b-sea {
+  flex: none;
+  width: 200px;
+  height: 72px;
+  background-position: 78% 91%;
+  background-size: 205% auto;
+  background-repeat: no-repeat;
+  opacity: .66;
+  mask-image: radial-gradient(ellipse 74% 76% at 53% 54%, black 40%, transparent 84%);
+  pointer-events: none;
+}
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  #opening-works .b-body { padding: 24px 5px; gap: 18px; }
+  #opening-works .b-games { grid-template-columns: 1fr; gap: 16px; }
+  #opening-works .b-game-info { padding: 10px 12px; gap: 10px; }
+  #opening-works .b-game-info h3 { font-size: clamp(21px, 5vw, 30px); }
+  #opening-works .b-game-info p { font-size: 15px; }
+  #opening-works .b-qr {
+    width: clamp(92px, 23vw, 132px);
+    height: clamp(92px, 23vw, 132px);
+    border-width: 5px;
+  }
+  #opening-works .b-closing { flex-wrap: wrap; gap: 8px 12px; }
+  #opening-works .b-prompt {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 14px;
+  }
+  #opening-works .b-prompt span, #opening-works .b-hint { font-size: 13px; }
+  #opening-works .b-prompt strong { font-size: clamp(21px, 5.5vw, 30px); }
+  #opening-works .b-sea { width: 100px; height: 38px; }
+}
 .rd-early[data-p="3"] .b-art{position:absolute;right:2.5%;top:45px;width:270px;height:240px;mask-image:radial-gradient(ellipse 65% 66%,black 63%,transparent 90%)}
 .rd-early[data-p="3"] .b-intro{max-width:1420px}
 .rd-early .b-habits{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
@@ -529,11 +637,6 @@ body[data-current="1"] .mastinfo { visibility:hidden; }
  .rd-early .b-speaker{bottom:27px;left:4px;gap:6px;flex-wrap:wrap}
  .rd-early .b-speaker strong{font-size:25px}.rd-early .b-speaker i{height:14px}
  .rd-early .b-games,.rd-early .b-bio,.rd-early .b-convo,.rd-early .b-mail-layout,.rd-early .b-examples,.rd-early .b-py,.rd-early .b-platform{grid-template-columns:1fr;gap:18px}
- .rd-early .b-screen{height:auto;max-height:210px;aspect-ratio:2.1;object-fit:cover}
- .rd-early .b-game-info{padding:12px;gap:10px}
- .rd-early .b-game-info h3{font-size:22px}
- .rd-early .b-game-info p{margin:8px 0 4px}
- .rd-early[data-p="2"] .b-strip span{border:0}
  .rd-early[data-p="3"] .b-art{position:static;order:1;width:120px;height:100px;margin:-8px auto}
  .rd-early[data-p="3"] .b-intro{order:0}.rd-early[data-p="3"] .b-habits{order:2}.rd-early[data-p="3"] .b-strip{order:3}
  .rd-early .b-habits,.rd-early .b-ladder{grid-template-columns:1fr 1fr;gap:8px}
@@ -1002,7 +1105,48 @@ body:has(.slide.lp-43.is-active),body:has(.slide.lp-43.is-active) .frame{backgro
 </defs></svg>
 <main id="stage" aria-label="幻灯片">
 <div class="rd-sheet" data-theme="blue" data-print="开场 · 学习与创造　 ·　 01 / 49"><section id="first-cover" class="slide rd rd-early is-active" aria-label="第 1 页，AI 浪潮下，如何学习与创造？" data-print="Brclio · 厦门工学院　　01 / 49" data-chapter="开场 · 学习与创造" data-theme="blue" data-title="AI 浪潮下，如何学习与创造？" data-p="1"><div class="rs-body b-body"><div class="b-art" aria-hidden="true" style="--cover-sea:url('{{F:v3-cover-sea.webp}}')"></div><div class="b-cover-copy"><p class="b-k">厦门工学院专题讲座</p><h1><span>AI 浪潮下，</span>如何<b>学习</b>与<em><b>创造</b>？</em></h1><p class="b-sub">从提出一个问题，到做出一件作品。</p></div><p class="b-speaker"><span>主讲</span><strong>黄家宝</strong><span>AI 悦创 · Brclio</span><i></i>理念 + 交付</p></div><aside class="notes" hidden><p>你好，我是悦创。今天想和你聊三件事：碰到新知识怎么学，要不要学编程，以及怎么把自己的想法做出来。先请大家拿出手机，玩两个我做的小项目。</p></aside></section></div>
-<div class="rd-sheet" data-theme="blue" data-print="开场 · 学习与创造　 ·　 02 / 49"><section class="slide rd rd-early" hidden aria-label="第 2 页，先玩两个 AI 作品" data-print="Brclio · 厦门工学院　　02 / 49" data-chapter="开场 · 学习与创造" data-theme="blue" data-title="先玩两个 AI 作品" data-p="2"><div class="rs-body b-body"><header class="b-intro"><p class="b-k">拿出手机 · 现场扫码试玩</p><h2>AI 类讲座，先用 <em>AI 作品</em>开场</h2></header><div class="b-games"><article><img src="{{A165375ce}}" alt="记忆圣诞树作品预览" class="b-screen"><div class="b-game-info"><div><h3><a href="https://ai.bornforthis.cn/MemorySpark/FinalVersion.html" target="_blank" rel="noopener noreferrer">记忆圣诞树 ↗</a></h3><p>MemorySpark · 打开即玩</p><small>点击二维码可放大</small></div><button type="button" class="b-qr" data-resource="tree" aria-label="放大记忆圣诞树二维码"><img src="{{Ab770ebc5}}" alt="记忆圣诞树二维码" ></button></div></article><article><img src="{{Ae1de574f}}" alt="指尖上的 AR 花园作品预览" class="b-screen"><div class="b-game-info"><div><h3><a href="https://ai.bornforthis.cn/ARGarden/" target="_blank" rel="noopener noreferrer">指尖上的 AR 花园 ↗</a></h3><p>AR 互动 · 需要开启摄像头</p><small>点击二维码可放大</small></div><button type="button" class="b-qr" data-resource="garden" aria-label="放大指尖上的 AR 花园二维码"><img src="{{A68739cb9}}" alt="指尖上的 AR 花园二维码" ></button></div></article></div><div class="b-strip b-gold"><span>玩完想一想</span><strong>如果是你，最想改哪个细节？</strong></div></div><aside class="notes" hidden><p>你好，我是悦创。AI 类型讲座，就应该用 AI 的创意项目开启。先打开圣诞树，再请一位同学试试 AR 花园（需要相机权限）。听几位同学说说会改什么，再问：如果你想把这个想法做出来，会从哪开始？</p></aside></section></div>
+<div class="rd-sheet" data-theme="blue" data-print="开场 · 学习与创造　 ·　 02 / 49"><section id="opening-works" class="slide rd rd-early" hidden aria-label="第 2 页，先玩两个 AI 作品"
+         data-print="Brclio · 厦门工学院　　02 / 49" data-chapter="开场 · 学习与创造"
+         data-theme="blue" data-title="先玩两个 AI 作品" data-p="2">
+  <div class="rs-body b-body">
+    <header class="b-intro">
+      <p class="b-k">拿出手机 · 现场直接扫码开玩</p>
+      <h2>AI 类讲座，先用 <em>AI 作品</em>开场</h2>
+    </header>
+    <div class="b-games">
+      <article>
+        <img class="b-screen" src="{{A165375ce}}" alt="记忆圣诞树作品预览">
+        <div class="b-game-info">
+          <div>
+            <h3><a href="https://ai.bornforthis.cn/MemorySpark/FinalVersion.html" target="_blank" rel="noopener noreferrer">记忆圣诞树 ↗</a></h3>
+            <p>MemorySpark · 打开即玩</p>
+          </div>
+          <button type="button" class="b-qr" data-resource="tree" aria-label="放大记忆圣诞树二维码">
+            <img src="{{Ab770ebc5}}" alt="记忆圣诞树二维码">
+          </button>
+        </div>
+      </article>
+      <article>
+        <img class="b-screen" src="{{Ae1de574f}}" alt="指尖上的 AR 花园作品预览">
+        <div class="b-game-info">
+          <div>
+            <h3><a href="https://ai.bornforthis.cn/ARGarden/" target="_blank" rel="noopener noreferrer">指尖上的 AR 花园 ↗</a></h3>
+            <p>AR 互动 · 需要开启摄像头</p>
+          </div>
+          <button type="button" class="b-qr" data-resource="garden" aria-label="放大指尖上的 AR 花园二维码">
+            <img src="{{A68739cb9}}" alt="指尖上的 AR 花园二维码">
+          </button>
+        </div>
+      </article>
+    </div>
+    <div class="b-closing">
+      <p class="b-prompt"><span>玩完想一想</span><strong>如果是你，最想改哪个细节？</strong></p>
+      <small class="b-hint">点击二维码可放大</small>
+      <div class="b-sea" aria-hidden="true" style="background-image: url('{{F:v3-cover-sea.webp}}')"></div>
+    </div>
+  </div>
+  <aside class="notes" hidden><p>你好，我是悦创。AI 类型讲座，就应该用 AI 的创意项目开启。先打开圣诞树，再请一位同学试试 AR 花园（需要相机权限）。听几位同学说说会改什么，再问：如果你想把这个想法做出来，会从哪开始？</p></aside>
+</section></div>
 <div class="rd-sheet" data-theme="cream" data-print="开场 · 学习与创造　 ·　 03 / 49"><section class="slide rd rd-early" hidden aria-label="第 3 页，原则：遇到新知识时的四个习惯" data-print="Brclio · 厦门工学院　　03 / 49" data-chapter="开场 · 学习与创造" data-theme="cream" data-title="原则：遇到新知识时的四个习惯" data-p="3"><div class="rs-body b-body"><img src="{{F:v3-compass.webp}}" alt="" aria-hidden="true" class="b-art"><header class="b-intro"><p class="b-k">大家正在淌的泥泞，就是我曾经跋涉过的路。</p><h2>每次学新东西，<br>我都会做这四件事</h2></header><div class="b-habits"><article><b>01</b><h3>确定问题</h3><p>把“想学 AI”变成一个能验证的目标。</p></article><article><b>02</b><h3>Google + AI 搜索</h3><p>找一篇好文章，顺着线索继续追问。</p></article><article><b>03</b><h3>边学边写</h3><p>一行行实操，弄懂就补进自己的文章。</p></article><article><b>04</b><h3>发布沉淀</h3><p>发到 bornforthis.cn，把博客写成知识库。</p></article></div><div class="b-strip b-blue"><strong>一切的伟大成功，都是从模仿开始的。</strong><span>《羊皮卷》给我的提醒：原则比经验更持久。</span></div></div><aside class="notes" hidden><p>十几年前读《羊皮卷》：经验和时尚有关，只有原则是持久的。原则，就是那些不必每次重新思考、会自动去做的习惯和方法。第三步是重点：一行行跟着博主的文章做，不足的地方补进去。最初是想写出来没准能出名、赚钱，后来发现这是在建自己的知识库。</p></aside></section></div>
 <div class="rd-sheet" data-theme="blue" data-print="Q0 · 为什么听我讲　 ·　 04 / 49"><section class="slide rd rd-early" hidden aria-label="第 4 页，Q0 · 为什么听我讲？" data-print="Brclio · 厦门工学院　　04 / 49" data-chapter="Q0 · 为什么听我讲" data-theme="blue" data-title="Q0 · 为什么听我讲？" data-p="4"><div class="rs-body b-body"><div class="b-q0"><div><b class="b-qbig">Q0</b><h2>为什么<br>听我讲？</h2></div><div class="b-promise"><article><small>我也听过这样的讲座</small><h3>问题说得很准，<br>出了门还是不知道怎么做。</h3></article><article><small>今天，我给你的承诺</small><h3>每个问题都带一个方案。</h3><p>讲稿、教程、作品全部公开，<br>你可以回去照着做，也可以改成自己的。</p></article></div></div></div><aside class="notes" hidden><p>很多讲座只提出问题，不给方案，或者方案只停在口头上，来不及记。在我这里没有这个问题：讲稿、教程、资料全部公开。</p><p>可以从想念大学食堂说起，接一句自己对莆田“美食荒漠”的玩笑，先和同学们聊起来。</p></aside></section></div>
 <div class="rd-sheet" data-theme="cream" data-print="Q0 · 为什么听我讲　 ·　 05 / 49"><section class="slide rd rd-early" hidden aria-label="第 5 页，从软件工程学生，到编程私教" data-print="Brclio · 厦门工学院　　05 / 49" data-chapter="Q0 · 为什么听我讲" data-theme="cream" data-title="从软件工程学生，到编程私教" data-p="5"><div class="rs-body b-body"><header class="b-intro"><p class="b-k">关于讲者 · 黄家宝 / AI 悦创</p><h2>从软件工程学生，到编程私教</h2></header><div class="b-bio"><div><div class="b-life"><div><b>2018</b><p><strong>进软件工程专业</strong><small>旧教材碰上新技术</small></p></div><div><b>实践</b><p><strong>清华团队答疑 · 网易项目</strong><small>参与《第五人格》相关项目</small></p></div><div><b>出版</b><p><strong>北航社邀约出版《编程启蒙》</strong><small>六百多页精简至三百多页</small></p></div><div><b>现在</b><p><strong>面向全球学生，做编程私教</strong><small>持续写文章、录课、做作品</small></p></div></div><button type="button" class="zoom b-dat" data-caption="课堂回放文件夹 · 不完全统计" aria-label="查看课堂回放文件夹截图"><img src="{{A31d0b084}}" alt="课堂回放文件夹统计" ><strong>1.96 <small>TB</small></strong><span><b>18,232 个文件</b><small>课堂回放 · 不完全统计　↗</small></span></button></div><div class="b-proof"><button type="button" class="zoom b-photo b-book" aria-label="放大查看公开出版前言实拍" data-caption="公开出版前言实拍"><img class="b-book-original" src="{{A246f7ca5}}" alt="书籍前言原始实拍" aria-hidden="true"><img src="{{F:v3-preface.webp}}" alt="公开出版前言实拍" ><span>北航社出版 · 前言实拍 ↗</span></button><div><h3>我教过的学生来自</h3><p class="b-schools">加州伯克利　剑桥大学<br>宾夕法尼亚大学<br>新加坡国立大学<br>同济大学　中山大学</p><div class="b-read"><button type="button" class="b-qr" data-resource="preface" aria-label="放大公开出版前言二维码"><img src="{{A15334748}}" alt="公开出版前言二维码" ></button><small>扫码读<br>完整前言</small></div></div></div></div><div class="b-strip b-blue"><strong>今天，你和名校学生拥有同一位老师。</strong><span>我愿意把这些经历告诉你，是想让你知道，我足够教你。</span></div></div><aside class="notes" hidden><p>18 年进软件工程，困境是过时的学科内容和前沿的技术要求。后来在清华团队机构做答疑，又在网易负责第五人格相关项目，一直没停过写文章。北航出版社邀约出书，用引导式教学＋思维＋代码。正因为做私教，学员各行各业、遍布全球乃至各大名校。我说这些不是为了证明什么，而是让你知道我足够教你。</p></aside></section></div>
