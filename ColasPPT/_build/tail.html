@@ -1,0 +1,489 @@
+</main><footer class="foot"><div class="edition"><span class="folio" id="counter" aria-live="polite">01 / 34</span><span class="bar" aria-hidden="true"><i id="progress"></i></span></div><nav aria-label="放映控制" class="toolbar"><button type="button" id="menu" aria-label="目录" title="目录（M）"><svg aria-hidden="true" class="icon"><use href="#i-menu"/></svg><span class="ctl-label">目录</span></button><button type="button" id="resources" aria-label="资料" title="资料（R）"><svg aria-hidden="true" class="icon"><use href="#i-book"/></svg><span class="ctl-label">资料</span></button><button type="button" id="notebtn" aria-label="备注" title="备注（N）"><svg aria-hidden="true" class="icon"><use href="#i-notes"/></svg><span class="ctl-label">备注</span></button><button type="button" id="full" aria-label="全屏" title="全屏（F）"><svg aria-hidden="true" class="icon"><use href="#i-full"/></svg><span class="ctl-label">全屏</span></button><div class="navkeys"><button type="button" id="prev" title="上一页（←）" aria-label="上一页" disabled><svg aria-hidden="true" class="icon"><use href="#i-prev"/></svg></button><button type="button" id="next" title="下一页（→）" aria-label="下一页"><svg aria-hidden="true" class="icon"><use href="#i-next"/></svg></button></div></nav></footer></div><dialog id="overlay"><div class="ld-head"><h2 id="dialog-title"></h2><button type="button" id="close-dialog" aria-label="关闭" title="关闭（Esc）">×</button></div><div id="dialog-body"></div></dialog><script>window.lectureLinks=[{"key":"tree","label":"圣诞树","url":"https://ai.bornforthis.cn/MemorySpark/FinalVersion.html","qr":"{{Ab770ebc5}}"},{"key":"garden","label":"AR 花园","url":"https://ai.bornforthis.cn/ARGarden/","qr":"{{A68739cb9}}"},{"key":"preface","label":"公开出版前言","url":"https://bornforthis.cn/column/Python-Programming-Course/Preface","qr":"{{A15334748}}"},{"key":"email","label":"Cloudflare 域名邮箱教程","url":"https://bornforthis.cn/column/Python-Programming-Course/P10-Share/01-Cloudflare-Email-build","qr":"{{A13004d7b}}"},{"key":"blog","label":"AI悦创博客","url":"https://bornforthis.cn/","qr":null},{"key":"brclio","label":"Brclio","url":"https://brclio.com/","qr":null},{"key":"loadingvibe","label":"罗的个人网站","url":"https://loadingvibe.com/","qr":null},{"key":"krisyang","label":"Kris Yang","url":"https://krisyang.dev/","qr":null},{"key":"pythiaroot","label":"孟同学的个人网站","url":"https://pythiaroot.com/","qr":null},{"key":"jackiehu","label":"Jackie Hu","url":"https://jackiehu.design/","qr":null},{"key":"pixelwrld","label":"Pixelwrld","url":"https://pixelwrld.co/","qr":null},{"key":"kuldar","label":"Kuldar","url":"https://kuldar.com/","qr":null},{"key":"cali","label":"Cali","url":"https://cali.so/","qr":null},{"key":"lab","label":"Bornforthis AI 实验室","url":"https://ai.bornforthis.cn/","qr":null},{"key":"skills","label":"从对话制作 Skill","url":"https://bornforthis.cn/column/Python-Programming-Course/P18-Codex/06-create-codex-skills-from-conversation","qr":"{{A2072120c}}"},{"key":"design","label":"Brclio 设计系统","url":"https://github.com/Brclio/brclio-design-system","qr":"{{Ab178bec6}}"},{"key":"android","label":"Android 开通教程","url":"https://bornforthis.cn/column/Python-Programming-Course/P18-Codex/02-ChatGPT-Plus-Chain-Card","qr":"{{A9aef6de2}}"},{"key":"iphone","label":"iPhone 开通教程","url":"https://bornforthis.cn/column/Python-Programming-Course/P18-Codex/04-ChatGPT-Plus-China-Guide","qr":"{{Ac0e18900}}"},{"key":"depth","label":"出版前言 · 如何讲透","url":"https://bornforthis.cn/column/Python-Programming-Course/Preface#_2-3-%E6%B5%85%E8%80%85%E8%A7%89%E5%BE%97%E5%85%B6%E6%B5%85-%E6%B7%B1%E8%80%85%E8%A7%89%E5%BE%97%E5%85%B6%E6%B7%B1-%E4%B8%80%E4%B8%AA%E5%AD%97-%E9%80%8F","qr":"{{A52354618}}"},{"key":"wechat-article","label":"关于本地模型的文章","url":"https://mp.weixin.qq.com/s/zaRmt5UEMtol6pGEPAqddg","qr":null},{"key":"harness","label":"DeepSeek Harness","url":"https://www.deepseek.com/harness/","qr":null},{"key":"guide","label":"讲座原文（线上公开版）","url":"https://bornforthis.cn/Books/06-publishing-and-speaking/01-xiamen-institute-of-technology-guide","qr":"{{Ad83475da}}"}];</script><script>(() => {
+  'use strict';
+
+  function initialize() {
+    const $ = (id) => document.getElementById(id);
+    const stage = $('stage');
+    if (!stage) return;
+    const slides = Array.from(stage.querySelectorAll('section.slide'));
+    if (!slides.length) return;
+    const overlay = $('overlay');
+    const modalBody = $('dialog-body');
+    const modalTitle = $('dialog-title');
+    const closeButton = $('close-dialog');
+    const links = () => Array.isArray(window.lectureLinks) ? window.lectureLinks : [];
+    const byKey = (key) => links().find((entry) => entry.key === key);
+    const pad = (n) => String(n).padStart(2, '0');
+    const interactive = 'a, button, summary, details, input, textarea, select, video, audio, iframe, label, [contenteditable="true"], [role="button"], [role="tab"], [role="slider"]';
+    let index = -1;
+    let returnFocus = null;
+    let swipe = null;
+    let suppressClickUntil = 0;
+
+    function make(tag, text, className) {
+      const el = document.createElement(tag);
+      if (text !== undefined && text !== null) el.textContent = text;
+      if (className) el.className = className;
+      return el;
+    }
+
+    function button(label, className, action) {
+      const el = make('button', label, className);
+      el.type = 'button';
+      el.addEventListener('click', action);
+      return el;
+    }
+
+    function outsideLink(entry, label, className) {
+      const el = make('a', label, className);
+      el.href = entry.url;
+      el.target = '_blank';
+      el.rel = 'noopener noreferrer';
+      return el;
+    }
+
+    function render(next) {
+      if (index === next) return;
+      if (overlay.open) overlay.close();
+      index = next;
+      slides.forEach((slide, i) => {
+        slide.hidden = i !== index;
+        slide.classList.toggle('is-active', i === index);
+      });
+      const current = slides[index];
+      current.scrollTop = 0;
+      stage.scrollTop = 0;
+      if (document.scrollingElement) document.scrollingElement.scrollTop = 0;
+      document.body.dataset.theme = current.dataset.theme || 'cream';
+      $('topic').textContent = current.dataset.chapter || '';
+      $('counter').textContent = `${pad(index + 1)} / ${pad(slides.length)}`;
+      $('counter').setAttribute('aria-label', `第 ${index + 1} 页，共 ${slides.length} 页`);
+      $('prev').disabled = index === 0;
+      $('next').disabled = index === slides.length - 1;
+      $('progress').style.transform = `scaleX(${(index + 1) / slides.length})`;
+    }
+
+    function pageFromHash() {
+      const digits = /^#p(\d+)$/.exec(location.hash);
+      return digits ? Math.min(slides.length, Math.max(1, Number(digits[1]))) - 1 : 0;
+    }
+
+    function goTo(next) {
+      if (!Number.isInteger(next) || next < 0 || next >= slides.length) return;
+      if (overlay.open) overlay.close();
+      render(next);
+      const hash = `#p${next + 1}`;
+      if (location.hash !== hash) location.hash = hash;
+    }
+
+    function modal(title, kind) {
+      if (!overlay.open) returnFocus = document.activeElement;
+      modalTitle.textContent = title;
+      modalBody.replaceChildren();
+      modalBody.scrollTop = 0;
+      overlay.dataset.view = kind;
+      if (!overlay.open) overlay.showModal();
+      closeButton.focus({ preventScroll: true });
+    }
+
+    overlay.setAttribute('aria-labelledby', 'dialog-title');
+    closeButton.addEventListener('click', () => overlay.close());
+    overlay.addEventListener('close', () => {
+      if (overlay.open) return;
+      const target = returnFocus && returnFocus !== document.body && returnFocus.isConnected && !returnFocus.closest('[hidden]') && !returnFocus.disabled ? returnFocus : $('menu');
+      returnFocus = null;
+      target?.focus({ preventScroll: true });
+    });
+    let backdropDown = false;
+    function outsideRect(event) {
+      const rect = overlay.getBoundingClientRect();
+      return event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+    }
+    overlay.addEventListener('pointerdown', (event) => {
+      backdropDown = event.target === overlay && outsideRect(event);
+    });
+    overlay.addEventListener('click', (event) => {
+      if (backdropDown && event.target === overlay && outsideRect(event)) overlay.close();
+      backdropDown = false;
+    });
+
+    function directory() {
+      modal('幻灯片目录', 'directory');
+      const groups = new Map();
+      slides.forEach((slide, i) => {
+        const chapter = slide.dataset.chapter || '讲座';
+        if (!groups.has(chapter)) {
+          const group = make('section', null, 'ld-group');
+          group.append(make('h3', chapter, 'ld-group-title'));
+          const list = make('div', null, 'ld-list');
+          group.append(list);
+          modalBody.append(group);
+          groups.set(chapter, list);
+        }
+        const page = button('', 'ld-row ld-slide-link', () => goTo(i));
+        if (i === index) page.setAttribute('aria-current', 'page');
+        page.append(make('span', pad(i + 1), 'ld-number'), make('span', slide.dataset.title || `第 ${i + 1} 页`));
+        groups.get(chapter).append(page);
+      });
+      const current = modalBody.querySelector('[aria-current="page"]');
+      if (current) requestAnimationFrame(() => current.scrollIntoView({block:'nearest'}));
+    }
+
+    function notes() {
+      const slide = slides[index];
+      modal(`讲者备注 · ${pad(index + 1)}`, 'notes');
+      const article = make('article', null, 'ld-notes');
+      article.append(make('h3', slide.dataset.title || '本页'));
+      const source = slide.querySelector('aside.notes');
+      if (source && source.textContent.trim()) {
+        source.childNodes.forEach((node) => article.append(node.cloneNode(true)));
+      } else {
+        article.append(make('p', '本页没有单独的讲者备注。'));
+      }
+      article.querySelectorAll('a[href^="http"]').forEach((a) => { a.target = '_blank'; a.rel = 'noopener noreferrer'; });
+      modalBody.append(article);
+    }
+
+    function resource(key, fromList = false) {
+      const entry = byKey(key);
+      if (!entry) return;
+      modal(entry.label, 'resource');
+      const detail = make('div', null, 'ld-resource-detail');
+      if (entry.qr) {
+        const image = make('img', null, 'ld-qr');
+        image.src = entry.qr;
+        image.alt = `${entry.label} 的二维码`;
+        detail.append(image);
+      }
+      const link = outsideLink(entry, '打开资源 ↗', 'ld-primary');
+      detail.append(link, make('p', entry.url, 'ld-address'));
+      if (fromList) detail.append(button('返回资料目录', 'ld-text-action', resources));
+      modalBody.append(detail);
+    }
+
+    function resources() {
+      modal('讲座资料', 'resources');
+      const list = make('div', null, 'ld-list ld-resources');
+      links().forEach((entry) => {
+        const row = entry.qr ? button('', 'ld-row', () => resource(entry.key, true)) : outsideLink(entry, '', 'ld-row');
+        row.append(make('span', entry.label), make('span', entry.qr ? '扫码' : '↗', 'ld-arrow'));
+        list.append(row);
+      });
+      modalBody.append(list);
+    }
+
+    function zoom(trigger) {
+      const original = trigger.querySelector('img');
+      if (!original) return;
+      modal(trigger.dataset.caption || original.alt || '图片细节', 'image');
+      const frame = make('div', null, 'ld-image-frame');
+      frame.tabIndex = 0;
+      frame.setAttribute('aria-label', '图片查看区');
+      const photo = make('img', null, 'ld-photo');
+      photo.src = original.currentSrc || original.src;
+      photo.alt = original.alt || '';
+      photo.draggable = false;
+      const toggle = button('放大查看', 'ld-image-toggle', adjust);
+      toggle.setAttribute('aria-pressed', 'false');
+      function adjust(event) {
+        const enlarged = frame.classList.toggle('ld-enlarged');
+        toggle.setAttribute('aria-pressed', String(enlarged));
+        toggle.textContent = enlarged ? '适应窗口' : '放大查看';
+        if (enlarged) {
+          const oldRect = photo.getBoundingClientRect();
+          const point = event?.target === photo ? [(event.clientX - oldRect.left) / oldRect.width, (event.clientY - oldRect.top) / oldRect.height] : [0.5, 0];
+          photo.style.width = `${Math.max(photo.naturalWidth, original.naturalWidth, frame.clientWidth * 1.6)}px`;
+          frame.scrollLeft = photo.clientWidth * point[0] - frame.clientWidth / 2;
+          frame.scrollTop = photo.clientHeight * point[1] - frame.clientHeight / 2;
+        } else {
+          photo.style.removeProperty('width');
+          frame.scrollTo(0, 0);
+        }
+      }
+      photo.addEventListener('click', adjust);
+      frame.append(photo);
+      modalBody.append(frame, toggle);
+    }
+
+    const fullButton = $('full');
+    async function fullscreen() {
+      try {
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+          if (document.exitFullscreen) await document.exitFullscreen();
+          else document.webkitExitFullscreen?.();
+        } else if (document.documentElement.requestFullscreen) {
+          await document.documentElement.requestFullscreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {
+          document.documentElement.webkitRequestFullscreen();
+        }
+      } catch {
+        fullButton.title = '当前浏览器未允许全屏';
+      }
+    }
+    function fullStatus() {
+      const active = !!(document.fullscreenElement || document.webkitFullscreenElement);
+      fullButton.setAttribute('aria-pressed', String(active));
+      fullButton.setAttribute('aria-label', active ? '退出全屏' : '进入全屏');
+    }
+    fullStatus();
+    document.addEventListener('fullscreenchange', fullStatus);
+    document.addEventListener('webkitfullscreenchange', fullStatus);
+    fullButton.addEventListener('click', fullscreen);
+    $('prev').addEventListener('click', () => goTo(index - 1));
+    $('next').addEventListener('click', () => goTo(index + 1));
+    $('menu').addEventListener('click', directory);
+    $('notebtn').addEventListener('click', notes);
+    $('resources').addEventListener('click', resources);
+
+    stage.querySelectorAll('a[href^="http"]').forEach((anchor) => { anchor.target = '_blank'; anchor.rel = 'noopener noreferrer'; });
+    stage.addEventListener('click', (event) => {
+      if (event.defaultPrevented || event.button !== 0 || performance.now() < suppressClickUntil || overlay.open) return;
+      const target = event.target;
+      const resourceButton = target.closest('button[data-resource]');
+      if (resourceButton) { resource(resourceButton.dataset.resource); return; }
+      const imgButton = target.closest('button.zoom');
+      if (imgButton) { zoom(imgButton); return; }
+      const jump = target.closest('button[data-jump]');
+      if (jump) { goTo(Number(jump.dataset.jump) - 1); return; }
+      if (target.closest(interactive) || !target.closest('.slide.is-active') || window.getSelection()?.toString()) return;
+      goTo(index + 1);
+    });
+
+    stage.addEventListener('touchstart', (event) => {
+      if (event.touches.length !== 1 || event.target.closest(interactive)) { swipe = null; return; }
+      const {clientX:x, clientY:y} = event.touches[0];
+      swipe = {x, y};
+    }, {passive: true});
+    stage.addEventListener('touchcancel', () => { swipe = null; }, {passive: true});
+    stage.addEventListener('touchend', (event) => {
+      if (!swipe || !event.changedTouches.length) return;
+      const {clientX, clientY} = event.changedTouches[0];
+      const dx = clientX - swipe.x;
+      const dy = clientY - swipe.y;
+      swipe = null;
+      if (Math.abs(dx) > 16 || Math.abs(dy) > 16) suppressClickUntil = performance.now() + 450;
+      if (Math.abs(dx) >= 55 && Math.abs(dx) > Math.abs(dy) * 1.6 && !window.getSelection()?.toString()) goTo(index + (dx < 0 ? 1 : -1));
+    }, {passive: true});
+
+    document.addEventListener('keydown', (event) => {
+      if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.isComposing || overlay.open) return;
+      const target = event.target;
+      if (target instanceof Element && target.closest('input, textarea, select, [contenteditable="true"], [role="textbox"], video, audio')) return;
+      const k = event.key.toLowerCase();
+      if (k === ' ' && target instanceof Element && target.closest(interactive)) return;
+      const actions = {
+        arrowleft: () => goTo(index - 1), arrowup: () => goTo(index - 1), pageup: () => goTo(index - 1),
+        arrowright: () => goTo(index + 1), arrowdown: () => goTo(index + 1), pagedown: () => goTo(index + 1),
+        ' ': () => goTo(index + (event.shiftKey ? -1 : 1)), home: () => goTo(0), end: () => goTo(slides.length - 1),
+        m: directory, n: notes, r: resources, f: fullscreen
+      };
+      if (actions[k]) { event.preventDefault(); if (!event.repeat) actions[k](); }
+    });
+    window.addEventListener('hashchange', () => render(pageFromHash()));
+    render(pageFromHash());
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initialize, {once:true});
+  else initialize();
+})();
+</script><!-- Brclio Design System © 2026 Brclio, CC BY-NC-SA 4.0. Brand template adapted for this lecture. Original screenshots and cited works retain their respective attribution.
+Embedded font subset: Noto Serif SC, licensed under SIL Open Font License 1.1.
+Copyright 2012 Google Inc. All Rights Reserved.
+
+This Font Software is licensed under the SIL Open Font License,
+Version 1.1.
+
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font
+creation efforts of academic and linguistic communities, and to
+provide a free and open framework in which fonts may be shared and
+improved in partnership with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded,
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply to
+any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software
+components as distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to,
+deleting, or substituting -- in part or in whole -- any of the
+components of the Original Version, by changing formats or by porting
+the Font Software to a new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed,
+modify, redistribute, and sell modified and unmodified copies of the
+Font Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components, in
+Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the
+corresponding Copyright Holder. This restriction only applies to the
+primary font name as presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created using
+the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+--><!-- © 2026 Brclio | Brclio Design System | CC BY-NC-SA 4.0. Adapted from the landing page hero, text highlighter and ticket components.
+Embedded Fraunces italic font license:
+Copyright 2020 The Fraunces Project Authors (github.com/undercasetype/Fraunces) Fraunces-Italic[SOFT,WONK,opsz,wght].ttf: Copyright 2020 The Fraunces Project Authors (github.com/undercasetype/Fraunces)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+—————————————————————————————-
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+—————————————————————————————-
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded,
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting — in part or in whole — any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+--><script>
+/* 封面页：鼠标静止 3 秒后，底部工具栏淡出；移动鼠标或按 Tab 时回来 */
+(() => {
+  const b = document.body; let timer;
+  const wake = () => { b.classList.remove('chrome-idle'); clearTimeout(timer); timer = setTimeout(() => b.classList.add('chrome-idle'), 3000); };
+  ['pointermove','pointerdown','focusin'].forEach(e => addEventListener(e, wake, {passive:true}));
+  wake();
+})();
+</script></body></html>
