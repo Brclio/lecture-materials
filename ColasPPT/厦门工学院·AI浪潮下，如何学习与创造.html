@@ -223,6 +223,7 @@ button { cursor:pointer; } a { text-decoration:none; } button:disabled { cursor:
   position:relative; margin:0; width:100%; height:100%; min-width:0; min-height:0;
   color:var(--fg); background-color:var(--page); overflow:clip;
 }
+.slide.rd[data-theme="paper"] { background-color:var(--cream); }
 .rs-body { min-width:0; }
 .icon { display:inline-block; width:1.2em; height:1.2em; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; flex:none; }
 .zoom { cursor:zoom-in; padding:0; }
@@ -1149,7 +1150,6 @@ body:has(.slide.lp-43.is-active),body:has(.slide.lp-43.is-active) .frame{backgro
 /* 第 4 页 · 今天要搞定的 8 个问题：序 + 三段路 */
 #question-agenda {
   --ink-blue:#163f64; --note-yellow:#f5d35c; --paper:#faf6e9; --qa-red:#b0442b; --qa-rust:#995024; --qa-mute:#5d6a72;
-  background:var(--paper);
 }
 .qa { height:100%; display:grid; grid-template-rows:auto minmax(0,1fr) auto; gap:26px; padding:10px 4px 4px; color:var(--ink-blue); }
 .qa button { color:inherit; background:transparent; border:0; padding:0; text-align:left; font:inherit; cursor:pointer; }
