@@ -251,7 +251,11 @@ body[data-edge="open"] .mast { border-color:transparent; }
 body:is([data-theme="blue"],[data-theme="ink"]) .joint-school-dark { display:none; }
 body:is([data-theme="blue"],[data-theme="ink"]) .joint-school-light { display:block; }
 body[data-current="1"] .joint-lockup { transform:scale(1.15); transform-origin:left center; }
-body[data-current="1"] .mastinfo { visibility:hidden; }
+body:is(
+  [data-current="1"], [data-current="2"], [data-current="5"], [data-current="7"],
+  [data-current="8"], [data-current="10"], [data-current="16"], [data-current="21"],
+  [data-current="26"], [data-current="31"]
+) .mastinfo { visibility:hidden; }
 .folio { font:italic 700 25px/1 'Cover Fraunces',Georgia,serif; font-variant-numeric:tabular-nums; white-space:nowrap; }
 .edition { gap:24px; }
 .bar { width:110px; height:3px; background:var(--rule); }
