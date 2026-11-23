@@ -2463,6 +2463,48 @@ body:has(#opportunity-quote.is-active, #tools-quote.is-active, #future-quote.is-
   .p42-v03 .p42-b .v3-svg :is(.ax,.sm) { font-size:28px; }
 }
 
+/* 第 44 页 · Learn in Public · 冰山 */
+.lp-slide.lp44 svg{display:block;width:100%;height:auto;overflow:visible}
+.lp-slide.lp44 svg text{font-family:var(--sans)}
+.lp-slide.lp44 .a{transform-box:fill-box;transform-origin:center}
+.lp-slide.lp44 .a-b{transform-box:fill-box;transform-origin:center bottom}
+.lp-slide.lp44 .lp44-replay{position:absolute;right:0;top:4px;z-index:3;display:inline-flex;align-items:center;gap:.45em;padding:8px 16px;border:1.5px solid var(--rule);border-radius:50px;background:transparent;color:var(--muted);font:650 20px/1 var(--sans);cursor:pointer}
+.lp-slide.lp44 .lp44-replay:hover{color:var(--accent);border-color:var(--accent)}
+.lp-slide.lp44 .lp44-replay svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8}
+@keyframes lp44-rise{from{opacity:0;transform:translateY(34px)}}
+@keyframes lp44-pop{0%{opacity:0;transform:scale(.4)}70%{opacity:1;transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes lp44-fade{from{opacity:0}}
+@keyframes lp44-grow{from{transform:scaleY(0)}}
+@media print,(prefers-reduced-motion:reduce){.lp-slide.lp44 .lp44-replay{display:none}}
+.slide.rd.lp-slide.lp44-v2{color:#fffdf6}
+.lp44-v2 .lp-kicker,.lp44-v2 .lp-inner em{color:var(--lp-gold)}
+.lp44-v2 .lp44v2-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center;height:100%}
+.lp44-v2 .lp44v2-copy{display:flex;flex-direction:column;gap:40px;min-width:0}
+.lp44-v2 .lp44v2-copy h2{font-size:78px}
+.lp44-v2 .lp44v2-lead{color:#dbe3e4;font-size:32px!important;line-height:1.6!important}
+.lp44-v2 .lp44v2-take{padding:24px 28px;background:var(--lp-gold);color:#141d26;font:750 36px/1.5 var(--serif)!important;text-wrap:pretty}
+.lp44-v2 .lp44v2-art{min-width:0;max-height:820px}
+.lp44-v2 .lp44v2-art svg{max-height:820px}
+@keyframes lp44v2-emerge{from{transform:translateY(150px)}}
+@keyframes lp44v2-bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(5px) rotate(-1.2deg)}}
+@media screen and (prefers-reduced-motion:no-preference){
+ .lp44-v2.is-active .lp44v2-tag{animation:lp44-fade .6s ease-out var(--d) both}
+ .lp44-v2.is-active .lp44v2-block{animation:lp44v2-emerge .9s cubic-bezier(.2,.8,.2,1) var(--d) both}
+ .lp44-v2.is-active .lp44v2-flag{animation:lp44-grow .4s ease-out var(--d) both}
+ .lp44-v2.is-active .lp44v2-say{animation:lp44-pop .45s ease-out var(--d) both}
+ .lp44-v2.is-active .lp44v2-boat{transform-box:fill-box;transform-origin:center;animation:lp44v2-bob 3.2s ease-in-out infinite}
+ .lp44-v2.is-active .lp44v2-take{animation:lp44-rise .6s ease-out 3.6s both}
+}
+@media screen and (max-width:768px) and (orientation:portrait){
+
+ .lp44-v2 .lp-inner { padding:14px 0 20px; gap:12px; justify-content:center; }
+ .lp-slide.lp44-v2 .lp44-replay { position:static; align-self:flex-end; min-height:32px; padding:6px 10px; font-size:14px; }
+ .lp44-v2 .lp44v2-grid { grid-template-columns:minmax(0,1fr); gap:18px; height:auto; }
+ .lp44-v2 .lp44v2-art { overflow:hidden; }
+ .lp44-v2 .lp44v2-copy{gap:14px}.lp44-v2 .lp44v2-lead{font-size:18px!important}
+ .lp44-v2 .lp44v2-take{font-size:20px!important;padding:12px 15px}
+}
+
 /* 第 56 页 · 课后交流与资料 */
 .lp-49 .lp-inner { gap:28px; padding:24px 0; }
 .lp-49 .closing-codes {
@@ -3247,7 +3289,25 @@ body:has(#opportunity-quote.is-active, #tools-quote.is-active, #future-quote.is-
 <p class="b-sub">把所学讲给别人听，给 AI 的答案找茬。</p>
 <div class="b-chips"><span>Learn in Public</span><span>批判性思维</span><span>选对导师</span><span>告别学生思维</span></div>
 </div></div><aside class="notes" hidden><p>四个关键词，一个一个讲。</p><ul><li>Learn in Public：把学到的东西公开讲出来。</li><li>批判性思维：学会给 AI 的答案找茬。</li><li>选对导师：跟真正做出结果的人学。</li><li>告别学生思维：选对材料，为解决问题而学。</li></ul></aside></section></div>
-<div class="rd-sheet" data-theme="cream" data-print="Q6 · AI 时代的学习方式　 ·　 44 / 56"><section class="slide rd lp-slide lp-37" data-p="40" hidden aria-label="第 44 页，别偷偷学，让别人看见你在学" data-print="Brclio · 厦门工学院　　44 / 56" data-chapter="Q6 · AI 时代的学习方式" data-title="别偷偷学，让别人看见你在学" data-theme="cream"><div class="lp-inner rs-body"><div class="lp-pub"><div><header class="lp-heading"><p class="lp-kicker">Learn in Public · 尤其是文科、商科同学</p><h2>别偷偷学。<br>让别人看见你在学。</h2></header><blockquote>学校有考试。进了职场，学完没人知道，就跟没学一样。</blockquote><p class="lp-take">用输出倒逼输入。你发出的学习记录，也会成为面试时递出去的名片。</p></div><article class="lp-post"><p class="lp-kicker">一次公开学习记录 · 示例</p><h3>同一篇推文，我让 AI 做了两版封面</h3><div class="lp-beforeafter"><div><small>BEFORE</small><b>开学学习方法总结<br>课堂管理时间复盘<br>高效学习实践分享</b></div><div><small>AFTER</small><b>我的开学清单</b></div></div><dl><dt>试了什么</dt><dd>用 AI 做两版封面。</dd><dt>发现什么</dt><dd>手机上看，第一版的标题太挤。</dd><dt>改了什么</dt><dd>留六个字，放大，发出前后对比。</dd></dl></article></div></div><aside class="notes" hidden><p>Learn in public：看到好资料就分享，用了好的 AI 产品就把感想发出来。在学校有考试检验你，进了职场，学完没人知道就跟没学一样。有记录分享的习惯，就能慢慢建立个人品牌和 audience，面试时直接把作品发给面试官。右边是一个示意。</p></aside></section></div>
+<div class="rd-sheet" data-theme="ink" data-print="Q6 · AI 时代的学习方式　 ·　 44 / 56"><section class="slide rd lp-slide lp-37 lp44 lp44-v2" data-p="40" hidden aria-label="第 44 页，面试官只看得见水面以上的部分。" data-print="Brclio · 厦门工学院　　44 / 56" data-chapter="Q6 · AI 时代的学习方式" data-title="面试官只看得见水面以上的部分。" data-theme="ink"><div class="lp-inner rs-body"><button type="button" class="lp44-replay" aria-label="重播动画"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5"></path></svg>重播</button>
+<div class="lp44v2-grid">
+<div class="lp44v2-copy">
+<header class="lp-heading"><p class="lp-kicker">Learn in Public · 尤其是文科、商科同学</p><h2>面试官只看得见<br><em>水面以上的部分。</em></h2></header>
+<p class="lp44v2-lead">看课、记笔记、试工具，都在水下。<br>学完不发出来，就没人知道你学过。</p>
+<p class="lp44v2-take">Learn in Public：把水下的努力，一条条拿到水面上。</p>
+</div>
+<figure class="lp44v2-art"><svg viewBox="0 0 980 800" role="img" aria-label="学习的冰山：水下是看课、笔记，水面上是发出来的学习记录"><clipPath id="lp44v2-sky"><rect x="0" y="-40" width="980" height="342"></rect></clipPath><rect x="0" y="300" width="980" height="500" fill="#173a5c"></rect><path d="M0 360 q40 -12 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0" fill="none" stroke="#688cab" stroke-width="2" opacity="0.35"></path><path d="M0 470 q40 -12 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0" fill="none" stroke="#688cab" stroke-width="2" opacity="0.22"></path><path d="M0 590 q40 -12 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0" fill="none" stroke="#688cab" stroke-width="2" opacity="0.16"></path><path d="M0 710 q40 -12 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0" fill="none" stroke="#688cab" stroke-width="2" opacity="0.12"></path><path class="lp44v2-under" d="M300 300 L690 300 L790 420 L760 590 L640 760 L430 778 L270 650 L222 470 Z" fill="#2a5276" stroke="#9fb9cf" stroke-width="3" stroke-linejoin="round"></path><path d="M330 330 L300 460 M700 340 L745 450 M460 760 L360 680" stroke="#9fb9cf" stroke-width="2" opacity=".45"></path><g class="lp44v2-tag a" style="--d: 0.2s;"><rect x="372" y="352" width="223" height="44" rx="22" fill="#1d4466" stroke="#7f9db7" stroke-width="2"></rect><text x="483.5" y="382" text-anchor="middle" font-size="22" font-weight="650" fill="#dbe3e4">看了 40 节网课</text></g>
+<g class="lp44v2-tag a" style="--d: 0.35s;"><rect x="540" y="430" width="202" height="44" rx="22" fill="#1d4466" stroke="#7f9db7" stroke-width="2"></rect><text x="641.0" y="460" text-anchor="middle" font-size="22" font-weight="650" fill="#dbe3e4">记了 3 本笔记</text></g>
+<g class="lp44v2-tag a" style="--d: 0.5s;"><rect x="318" y="512" width="307" height="44" rx="22" fill="#1d4466" stroke="#7f9db7" stroke-width="2"></rect><text x="471.5" y="542" text-anchor="middle" font-size="22" font-weight="650" fill="#dbe3e4">试了 12 个 AI 工具</text></g>
+<g class="lp44v2-tag a" style="--d: 0.65s;"><rect x="520" y="594" width="160" height="44" rx="22" fill="#1d4466" stroke="#7f9db7" stroke-width="2"></rect><text x="600.0" y="624" text-anchor="middle" font-size="22" font-weight="650" fill="#dbe3e4">熬夜改提示词</text></g>
+<g class="lp44v2-tag a" style="--d: 0.8s;"><rect x="400" y="676" width="265" height="44" rx="22" fill="#1d4466" stroke="#7f9db7" stroke-width="2"></rect><text x="532.5" y="706" text-anchor="middle" font-size="22" font-weight="650" fill="#dbe3e4">收藏了 200 篇干货</text></g>
+<g clip-path="url(#lp44v2-sky)"><g class="lp44v2-block" style="--d: 1.4s;"><path d="M366 300 L376 236 L628 236 L638 300 Z" fill="#fffdf6" stroke="#172736" stroke-width="3" stroke-linejoin="round"></path><text x="502.0" y="276.0" text-anchor="middle" font-size="23" font-weight="800" fill="#172736">发了一篇学习复盘</text></g>
+<g class="lp44v2-block" style="--d: 2.0s;"><path d="M392 230 L402 168 L618 168 L628 230 Z" fill="#fffdf6" stroke="#172736" stroke-width="3" stroke-linejoin="round"></path><text x="510.0" y="207.0" text-anchor="middle" font-size="23" font-weight="800" fill="#172736">分享了一份好资料</text></g>
+<g class="lp44v2-block" style="--d: 2.6s;"><path d="M424 162 L434 100 L594 100 L604 162 Z" fill="#f4d758" stroke="#172736" stroke-width="3" stroke-linejoin="round"></path><text x="514.0" y="139.0" text-anchor="middle" font-size="23" font-weight="800" fill="#172736">做了个小工具</text></g></g>
+<g class="lp44v2-flag a-b" style="--d: 3.1s;"><path d="M514 100 V46" stroke="#fffdf6" stroke-width="3.5"></path><path d="M516 48 L566 60 L516 74 Z" fill="#ff746d" stroke="#172736" stroke-width="2"></path></g><path d="M0 300 H980" stroke="#dbe3e4" stroke-width="3"></path><g class="lp44v2-boat"><g><path d="M90.9 280.3 C90.9 251.4 107.9 239.5 130.0 239.5 C152.1 239.5 169.1 251.4 169.1 280.3 Z" fill="#7d9bb5" stroke="#172736" stroke-width="2.5" stroke-linejoin="round"></path><circle cx="130.0" cy="214.0" r="18.7" fill="#fffdf6" stroke="#172736" stroke-width="2.5"></circle><path d="M111.3 213.2 C111.3 189.4 148.7 189.4 148.7 213.2 C136.5 202.4 124.4 206.1 111.3 213.2 Z" fill="#172736"></path><circle cx="123.6" cy="217.4" r="2.0" fill="#172736"></circle><circle cx="136.4" cy="217.4" r="2.0" fill="#172736"></circle><circle cx="130.0" cy="225.1" r="2.5" fill="none" stroke="#172736" stroke-width="1.5"></circle></g><path d="M40 284 L240 284 L210 318 L72 318 Z" fill="#f4d758" stroke="#172736" stroke-width="3" stroke-linejoin="round"></path><rect x="146" y="226" width="34" height="18" rx="7" fill="#172736"></rect><circle cx="156" cy="235" r="6" fill="#688cab"></circle><circle cx="172" cy="235" r="6" fill="#688cab"></circle><text x="140" y="346" text-anchor="middle" font-size="21" font-weight="700" fill="#dbe3e4">面试官</text></g>
+<g class="lp44v2-say a" style="--d: 3.4s;"><g><path d="M142.0 160 L152.0 176 L162.0 160" fill="#fffdf6" stroke="#172736" stroke-width="2.6" stroke-linejoin="round"></path><rect x="40" y="110" width="224" height="50" rx="25.0" fill="#fffdf6" stroke="#172736" stroke-width="2.6"></rect><path d="M142.0 160 L152.0 176 L162.0 160" fill="#fffdf6" stroke="none" transform="translate(0 -3)"></path><text x="152.0" y="142.9" text-anchor="middle" font-size="22" font-weight="700" fill="#172736">我只看得到这些</text></g></g><path d="M820 60 H850 V292 H820" fill="none" stroke="#f4d758" stroke-width="3"></path><text x="868" y="168" font-size="24" font-weight="800" fill="#f4d758">看得见</text><text x="868" y="200" font-size="19" fill="#dbe3e4">发出来的</text><path d="M820 312 H850 V770 H820" fill="none" stroke="#7f9db7" stroke-width="3"></path><text x="868" y="530" font-size="24" font-weight="800" fill="#9fb9cf">看不见</text><text x="868" y="562" font-size="19" fill="#9fb9cf">只自己知道</text></svg></figure>
+</div>
+</div><aside class="notes" hidden><p>你花了无数个小时看课、记笔记，这些都在水下，只有你自己知道。面试官、未来老板只看得见水面以上的部分：你发出来的复盘、分享的资料、做出来的小工具。Learn in public，就是把水下的努力，一点点搬到水面上。</p></aside></section></div>
 <div class="rd-sheet" data-theme="blue" data-print="Q6 · AI 时代的学习方式　 ·　 45 / 56"><section class="slide rd lp-slide lp-38" data-p="41" hidden aria-label="第 45 页，批判性思维 · 现场给 AI 找茬" data-print="Brclio · 厦门工学院　　45 / 56" data-chapter="Q6 · AI 时代的学习方式" data-title="批判性思维 · 现场给 AI 找茬" data-theme="blue"><div class="lp-inner rs-body"><header class="lp-heading"><p class="lp-kicker">现场实验 · 批判性思维</p><h2>AI 负责给答案，<em>你负责判断。</em></h2></header><div class="lp-lab"><form class="lp-form" id="lp38-form" novalidate><label for="lp38-name">你的名字 <small>（必填）</small></label><input id="lp38-name" type="text" autocomplete="off" placeholder="此刻什么都没填" aria-required="true"><button type="submit" id="lp38-submit">提交</button><div id="lp38-result" role="status" aria-live="polite" hidden><b>✓ 提交成功！</b><span id="lp38-warning">发现问题：空表单也通过了。</span></div></form><div class="lp-investigate"><h3>AI 说「表单做好了」。什么都不填，直接点提交，会怎样？</h3><details id="lp38-answer"><summary>揭晓 · 怎样把问题说清楚？</summary><ol><li><b>操作</b>不填名字，点提交。</li><li><b>实际</b>页面显示提交成功。</li><li><b>预期</b>拦截提交，提示补填。</li></ol></details><ul class="lp-questions"><li>为什么这么做？</li><li>有更好的方案吗？</li><li>会出什么问题？</li><li>默认了哪些条件？</li></ul></div></div><div class="lp-flag">AI 可以替你写代码。做什么、为什么做、对不对，最终由你判断。</div></div><aside class="notes" hidden><p>停几秒，请同学先给答案，再点开揭晓。网站能打开，就代表没问题吗？有没有安全漏洞、手机适配、用户多了会不会崩？发现问题后把操作、实际、预期说清楚，再追问问题出在哪、改哪里、改完怎么验证。</p><p>演示时先留空，点击「提交」后请台下描述问题。点「再试一次」可复原。</p></aside></section></div>
 <div class="rd-sheet" data-theme="cream" data-print="Q6 · AI 时代的学习方式　 ·　 46 / 56"><section class="slide rd lp-slide lp-39" data-p="42" hidden aria-label="第 46 页，跟有结果的人学，告别学生思维" data-print="Brclio · 厦门工学院　　46 / 56" data-chapter="Q6 · AI 时代的学习方式" data-title="跟有结果的人学，告别学生思维" data-theme="cream"><div class="lp-inner rs-body"><header class="lp-heading"><p class="lp-kicker">学习方式 · 找到适合自己的方法</p><h2>跟有结果的人学，告别「学生思维」。</h2></header><div class="lp-choices"><article><h3>跟谁学？</h3><ul><li>看他交付过什么作品。</li><li>看真实使用者怎样评价。</li><li>向他要链接，看他能否给你看。</li></ul></article><article><h3>学什么？先选对材料。</h3><p>想开口约会议，可以先练眼前这句话。</p><div class="lp-language"><span>啃完《傲慢与偏见》</span><b>Could we move the meeting to Friday?</b></div></article></div><div class="lp-shifts"><div><b>Content is King</b><p>找让你想学下去的材料。</p></div><div><b>Learn in Public</b><p>用公开输出倒逼输入。</p></div><div><b>从考试到成长</b><p>挑一个真问题来解决。</p></div></div><div class="lp-flag">你不需要成为最努力的人，但要找到能让自己持续进步的方法。</div></div><aside class="notes" hidden><p>短视频博主很多是外网转载、虚假制作，粉丝一问求链接，没有回应。学生思维，是习惯等别人划重点、安排进度。学 AI 也一样，零基础别去啃晦涩论文。你不需要成为最努力的人，但要找到能让自己持续进步的方法。研究能力这部分会更新到博客。</p></aside></section></div>
 <div class="rd-sheet" data-theme="blue" data-print="Q7 · Builder 的三种能力　 ·　 47 / 56"><section class="slide rd rd-early" data-p="43" hidden aria-label="第 47 页，Q7 · 这个时代的 Builder 最重要的素质是什么？" data-print="Brclio · 厦门工学院　　47 / 56" data-chapter="Q7 · Builder 的三种能力" data-title="Q7 · 这个时代的 Builder 最重要的素质是什么？" data-theme="blue"><div class="rs-body b-body"><div class="b-center">
@@ -3697,7 +3757,7 @@ body:has(#opportunity-quote.is-active, #tools-quote.is-active, #future-quote.is-
     fullButton.addEventListener('click', fullscreen);
     $('prev').addEventListener('click', () => step(-1));
     $('next').addEventListener('click', () => step(1));
-    document.querySelectorAll('.p27w-replay, .w29-replay').forEach((control) => {
+    document.querySelectorAll('.p27w-replay, .w29-replay, .lp44-replay').forEach((control) => {
       control.addEventListener('click', () => {
         const slide = control.closest('.slide');
         slide.scrollTop = 0;
